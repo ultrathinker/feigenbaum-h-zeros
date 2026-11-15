@@ -64,9 +64,11 @@ on an interval-arithmetic certificate that is reproduced by the code in this rep
 
 ## Related work by the author
 
-- Companion paper on universality classes d = 2, 4, 6 (reference [companion] in Appendix G) — in preparation.
+- Companion paper on universality classes d = 2, 4, 6 (reference [companion] in Appendix G) —
+  [feigenbaum-universality-classes](https://github.com/ultrathinker/feigenbaum-universality-classes).
 - Hyperbolicity of period-doubling renormalization at non-integer critical exponent ℓ ∈ [2, 4] —
-  Zenodo, DOI [10.5281/zenodo.22306911](https://doi.org/10.5281/zenodo.22306911).
+  [feigenbaum-hyperbolicity](https://github.com/ultrathinker/feigenbaum-hyperbolicity), Zenodo DOI
+  [10.5281/zenodo.22306911](https://doi.org/10.5281/zenodo.22306911).
 
 ## Citation and license
 

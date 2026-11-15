@@ -50,9 +50,11 @@ Python 3.13, `python-flint` 0.9.0, `mpmath` ≥ 1.3. Порядок — в [`ru/
 
 ## Другие работы автора
 
-- Статья-компаньон о классах универсальности d = 2, 4, 6 (ссылка [companion] в приложении G) — готовится.
+- Статья-компаньон о классах универсальности d = 2, 4, 6 (ссылка [companion] в приложении G) —
+  [feigenbaum-universality-classes](https://github.com/ultrathinker/feigenbaum-universality-classes).
 - Гиперболичность ренормализации удвоения периода при нецелом показателе ℓ ∈ [2, 4] —
-  Zenodo, DOI [10.5281/zenodo.22306911](https://doi.org/10.5281/zenodo.22306911).
+  [feigenbaum-hyperbolicity](https://github.com/ultrathinker/feigenbaum-hyperbolicity), Zenodo DOI
+  [10.5281/zenodo.22306911](https://doi.org/10.5281/zenodo.22306911).
 
 ## Цитирование и лицензия
 
