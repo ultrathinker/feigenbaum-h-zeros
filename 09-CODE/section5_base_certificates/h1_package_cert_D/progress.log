@@ -1,0 +1,74 @@
+[2026-08-13 17:19:57 +     0.0s] === tight_run.py START: Z72 tight R_S=3.566e-7, 6 arcs, workers=4, idle priority ===
+[2026-08-13 17:19:57 +     0.0s] arcs (sorted by conservative Rmax desc): [6, 13, 8, 12, 14, 11]
+[2026-08-13 17:20:43 +    46.2s]   arc  6 TUBE OK dt=46.2s [1/6] ETA 231s | r_s=3.5660e-07  Rmax 0.884996 -> 0.882900  x128_lower=6.1150e-03  pass(<1)=True
+[2026-08-13 17:20:44 +    47.2s]   arc 13 TUBE OK dt=47.2s [2/6] ETA 94s | r_s=3.5660e-07  Rmax 0.714377 -> 0.713653  x128_lower=6.0065e-03  pass(<1)=True
+[2026-08-13 17:20:44 +    47.2s]   arc 12 TUBE OK dt=47.2s [3/6] ETA 47s | r_s=3.5660e-07  Rmax 0.536522 -> 0.535654  x128_lower=6.0221e-03  pass(<1)=True
+[2026-08-13 17:20:45 +    47.4s]   arc  8 TUBE OK dt=47.4s [4/6] ETA 24s | r_s=3.5660e-07  Rmax 0.640252 -> 0.639246  x128_lower=6.0883e-03  pass(<1)=True
+[2026-08-13 17:21:27 +    89.6s]   arc 14 TUBE OK dt=43.4s [5/6] ETA 18s | r_s=3.5660e-07  Rmax 0.519738 -> 0.519446  x128_lower=5.9926e-03  pass(<1)=True
+[2026-08-13 17:21:28 +    90.4s]   arc 11 TUBE OK dt=43.2s [6/6] ETA 0s | r_s=3.5660e-07  Rmax 0.508223 -> 0.507991  x128_lower=6.0387e-03  pass(<1)=True
+[2026-08-13 17:21:28 +    90.4s] === tight_run.py DONE, wall=90.4s ===
+[2026-08-13 17:21:28 +    90.4s] --- SUMMARY (tight R_S=3.566e-7) ---
+[2026-08-13 17:21:28 +    90.4s]   arc | conservative Rmax | tight Rmax | tube_excess_cons(=Rmax-0.40) | scaled=excess*0.6555 | headroom
+[2026-08-13 17:21:28 +    90.4s]    6  | 0.884996          | 0.882900   | 0.484996                  | 0.717921             | new-pred=+1.6498e-01
+[2026-08-13 17:21:28 +    90.4s]   13  | 0.714377          | 0.713653   | 0.314377                  | 0.606078             | new-pred=+1.0758e-01
+[2026-08-13 17:21:28 +    90.4s]    8  | 0.640252          | 0.639246   | 0.240252                  | 0.557488             | new-pred=+8.1758e-02
+[2026-08-13 17:21:28 +    90.4s]   12  | 0.536522          | 0.535654   | 0.136522                  | 0.489492             | new-pred=+4.6162e-02
+[2026-08-13 17:21:28 +    90.4s]   14  | 0.519738          | 0.519446   | 0.119738                  | 0.478489             | new-pred=+4.0957e-02
+[2026-08-13 17:21:28 +    90.4s]   11  | 0.508223          | 0.507991   | 0.108223                  | 0.470942             | new-pred=+3.7049e-02
+[2026-08-13 17:21:28 +    90.4s] summary -> tight_arcs_summary.json
+[2026-08-13 17:32:46] === C+D COMPLETE ===
+[C] 6 Z72 arcs recomputed tight R_S=3.566e-7: worst 0.8850->0.8829 (Rmax insensitive to R_S; threshold 1.0 passed, margin 0.117). Not a blocker.
+[D] h1pkg_certificate.json: all_pass=True (assembly conditions), 11 sha256 pins, lemma anchored (LEMMA_H1.md + IDENTITY_B.md).
+[D] Discrepancies found vs brief: archive K100 2426->2432; x128 min 5.6e-3->1.1186e-3 (D_MINUS); tight est 0.72->0.883; NEG 85->53 archive/45 in 25-groups (working=1497).
+[D] M3 chain verified: level_tail PASS (M3=1834, Amax=1.3479e-4 < 2e-4 applicable) vs duhamel FAIL (M3=123479); P_all recomputed in flint.
+[D] Open item G (re-cert inherited K/M3/kernel) pending -- package conditional on G.
+[2026-08-13T19:06:01] === RECONCILE R start ===  flint=True
+[2026-08-13T19:06:02] R2 group_counts={'point10_layer1_census_A': 416, 'point10_layer1_census_B': 357, 'point14_m8_base': 257, 'point17_z72_geometry': 384, 'point3B_localize_two_roots_agent_fix1': 128}
+[2026-08-13T19:06:02] R2 total tube files in 5 groups = 1542
+[2026-08-13T19:06:02] R2 working (non-NEG) = 1465 ; NEG = 77 ; (working+NEG parsed = 1542)
+[2026-08-13T19:06:02] R2 per-group pos/NEG: {'point10_layer1_census_A': (384, 32), 'point10_layer1_census_B': (344, 13), 'point14_m8_base': (257, 0), 'point17_z72_geometry': (384, 0), 'point3B_localize_two_roots_agent_fix1': (96, 32)}
+[2026-08-13T19:06:02] R3 min x128_lower over ALL 1542 arcs = 1.1186050146e-03  (D_MINUS / cert_slice_D_MINUS_outerbox_tube_K100_P748a23.json)
+[2026-08-13T19:06:02] R3 min x128_lower over 1465 WORKING arcs = 1.1186050146e-03  (D_MINUS / cert_slice_D_MINUS_outerbox_tube_K100_P748a23.json)
+[2026-08-13T19:06:02] R3 all x128_lower>0 on all parsed arcs = True
+[2026-08-13T19:06:02] R2 worst WORKING Rmax=0.884996 (cert_slice_Z72_outerbox_tube_K100_P732a6.json); worst NEG Rmax=0.896949 (cert_slice_NEG_B2_outerbox_tube_K100_P78a2.json)
+[2026-08-13T19:06:02] R2 archive-wide (*_tube_K100_* under path_to_8, excl. h1_package): total=2134  pos=2049  NEG=85
+[2026-08-13T19:06:02] R2 per-folder: {"bench_parallel": {"total": 32, "neg": 0, "pos": 32}, "point10_layer1_census_A": {"total": 416, "neg": 32, "pos": 384}, "point10_layer1_census_B": {"total": 357, "neg": 13, "pos": 344}, "point11_radial_segments": {"total": 12, "neg": 0, "pos": 12}, "point14_m8_base": {"total": 257, "neg": 0, "pos": 257}, "point17_z72_geometry": {"total": 384, "neg": 0, "pos": 384}, "point2_completeness_disk7": {"total": 217, "neg": 0, "pos": 217}, "point3B_localize_two_roots_agent_fix1": {"total": 128, "neg": 32, "pos": 96}, "point6_sector_atlas_pilot": {"total": 40, "neg": 8, "pos": 32}, "w36": {"total": 291, "neg": 0, "pos": 291}}
+[2026-08-13T19:06:02] R4 *_tube_K100_* archive-wide INCLUDING h1_package = 2140
+[2026-08-13T19:06:02] R4 *_tube_K100_* archive-wide EXCLUDING h1_package = 2134
+[2026-08-13T19:06:02] R4 old loose glob 'cert_slice_*_K100*' excl h1_package = 2426 ; incl = 2432
+[2026-08-13T19:06:02] R4 loose-minus-tube (files matched by loose but NOT *_tube_K100_*) = 292
+[2026-08-13T19:06:02]     EXTRA loose: w36\audit_codex\cert_slice_outerbox_tube_K100_A16a0.json
+[2026-08-13T19:06:02]     EXTRA loose: w36\audit_codex\cert_slice_outerbox_tube_K100_A16a1.json
+[2026-08-13T19:06:02]     EXTRA loose: w36\audit_codex\cert_slice_outerbox_tube_K100_A16a10.json
+[2026-08-13T19:06:02]     EXTRA loose: w36\audit_codex\cert_slice_outerbox_tube_K100_A16a11.json
+[2026-08-13T19:06:02]     EXTRA loose: w36\audit_codex\cert_slice_outerbox_tube_K100_A16a12.json
+[2026-08-13T19:06:02]     EXTRA loose: w36\audit_codex\cert_slice_outerbox_tube_K100_A16a13.json
+[2026-08-13T19:06:02]     EXTRA loose: w36\audit_codex\cert_slice_outerbox_tube_K100_A16a14.json
+[2026-08-13T19:06:02]     EXTRA loose: w36\audit_codex\cert_slice_outerbox_tube_K100_A16a15.json
+[2026-08-13T19:06:02]     EXTRA loose: w36\audit_codex\cert_slice_outerbox_tube_K100_A16a2.json
+[2026-08-13T19:06:02]     EXTRA loose: w36\audit_codex\cert_slice_outerbox_tube_K100_A16a3.json
+[2026-08-13T19:06:02]     EXTRA loose: w36\audit_codex\cert_slice_outerbox_tube_K100_A16a4.json
+[2026-08-13T19:06:02]     EXTRA loose: w36\audit_codex\cert_slice_outerbox_tube_K100_A16a5.json
+[2026-08-13T19:06:02]     EXTRA loose: w36\audit_codex\cert_slice_outerbox_tube_K100_A16a6.json
+[2026-08-13T19:06:02]     EXTRA loose: w36\audit_codex\cert_slice_outerbox_tube_K100_A16a7.json
+[2026-08-13T19:06:02]     EXTRA loose: w36\audit_codex\cert_slice_outerbox_tube_K100_A16a8.json
+[2026-08-13T19:06:02]     EXTRA loose: w36\audit_codex\cert_slice_outerbox_tube_K100_A16a9.json
+[2026-08-13T19:06:02]     EXTRA loose: w36\audit_codex\cert_slice_outerbox_tube_K100_B16a0.json
+[2026-08-13T19:06:02]     EXTRA loose: w36\audit_codex\cert_slice_outerbox_tube_K100_B16a1.json
+[2026-08-13T19:06:02]     EXTRA loose: w36\audit_codex\cert_slice_outerbox_tube_K100_B16a10.json
+[2026-08-13T19:06:02]     EXTRA loose: w36\audit_codex\cert_slice_outerbox_tube_K100_B16a11.json
+[2026-08-13T19:06:02] R1 1/delta = 0.2141693770623265
+[2026-08-13T19:06:02] R1 (1-1/delta) = 0.7858306229376735
+[2026-08-13T19:06:02] R1 nh*|| = 6.33119360069264
+[2026-08-13T19:06:02] R1 r_s (=P_all+P_perp*D_star, archive) = 3.5659813645e-07
+[2026-08-13T19:06:02] R1 headroom to r_s (tube_radius - r_s) = 1.8740186355e-07
+[2026-08-13T19:06:02] R1 THIRD TERM tight  (e_star=1.2453e-8, level_tail M3=1834) = 1.0032824212e-07
+[2026-08-13T19:06:02] R1 THIRD TERM cons   (e_star=1.5053e-8, compute_ld M3=123479)= 1.2128055305e-07
+[2026-08-13T19:06:02] R1 P_tail(m0) TIGHT  = r_s + third_tight = 4.5692637857e-07
+[2026-08-13T19:06:02] R1 P_tail(m0) CONS   = r_s + third_cons  = 4.7787868950e-07
+[2026-08-13T19:06:02] R1 headroom TIGHT (tube - P_tail_tight)  = 8.7073621434e-08
+[2026-08-13T19:06:02] R1 headroom CONS  (tube - P_tail_cons)   = 6.6121310504e-08
+[2026-08-13T19:06:02] R1 P_tail_tight < tube_radius = True
+[2026-08-13T19:06:02] R1 P_tail_cons  < tube_radius = True
+[2026-08-13T19:06:02] wrote <ARCHIVE_ROOT>\article_v1\v3_work\h1_package\cert_D\reconcile_R_result.json
+[2026-08-13T19:06:02] === RECONCILE R done ===

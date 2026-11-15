@@ -1,0 +1,298 @@
+2026-08-13 19:31:15  === BRIEF F: батарея порч против verify_E ===
+2026-08-13 19:31:15  ARCH (READ-ONLY) = <ARCHIVE_ROOT>
+2026-08-13 19:31:15  SANDBOX          = <ARCHIVE_ROOT>\article_v1\v3_work\h1_package\tamper_F\sandbox
+2026-08-13 19:31:15  step1: sha256 архива ДО
+2026-08-13 19:31:16  step2: сборка чистой песочницы
+2026-08-13 19:31:17         скопировано tube-файлов: 1542 (ожидается 1542)
+2026-08-13 19:31:17  step2b: патч единственной строки ARCH в копии верификатора
+2026-08-13 19:31:17         diff: -ARCH = Path(r"<ARCHIVE_ROOT>")
+2026-08-13 19:31:17                +ARCH = Path(r"<ARCHIVE_ROOT>/article_v1/v3_work/h1_package/tamper_F/sandbox")
+2026-08-13 19:31:17  step3: baseline прогон на чистой песочнице (ожидание exit 0)
+2026-08-13 19:31:18  [T00_baseline] run start
+2026-08-13 19:31:19 start
+2026-08-13 19:31:19 check1 done
+2026-08-13 19:31:19 check2 done
+2026-08-13 19:31:23 check3 done
+2026-08-13 19:31:23 check4 done
+2026-08-13 19:31:23 check5 done
+2026-08-13 19:31:31 check6 done
+2026-08-13 19:31:31 check7 done
+2026-08-13 19:31:31 summary: checks=26 failed=0 blocks=[]
+2026-08-13 19:31:31  [T00_baseline] run done exit=0  12.7s
+2026-08-13 19:31:31         baseline exit=0 упавшие_блоки=[] за 12.7s
+2026-08-13 19:31:31  --- T01 P_all_levels_upper -> 2.9e-7 ---
+2026-08-13 19:31:33  [T01] run start
+2026-08-13 19:31:33 start
+2026-08-13 19:31:33 check1 done
+2026-08-13 19:31:33 check2 done
+2026-08-13 19:31:38 check3 done
+2026-08-13 19:31:38 check4 done
+2026-08-13 19:31:38 check5 done
+2026-08-13 19:31:47 check6 done
+2026-08-13 19:31:47 check7 done
+2026-08-13 19:31:47 summary: checks=26 failed=2 blocks=['C1', 'C2']
+2026-08-13 19:31:47  [T01] run done exit=1  13.5s
+2026-08-13 19:31:47         T01 exit=1 caught=True blocks=['1', '2'] за 13.5s
+2026-08-13 19:31:47  --- T02 M3_chosen -> 123479 ---
+2026-08-13 19:31:49  [T02] run start
+2026-08-13 19:31:49 start
+2026-08-13 19:31:49 check1 done
+2026-08-13 19:31:49 check2 done
+2026-08-13 19:31:53 check3 done
+2026-08-13 19:31:53 check4 done
+2026-08-13 19:31:53 check5 done
+2026-08-13 19:32:02 check6 done
+2026-08-13 19:32:02 check7 done
+2026-08-13 19:32:02 summary: checks=26 failed=1 blocks=['C1']
+2026-08-13 19:32:02  [T02] run done exit=1  12.5s
+2026-08-13 19:32:02         T02 exit=1 caught=True blocks=['1'] за 12.5s
+2026-08-13 19:32:02  --- T03 radius -> 1e-4 (ниже Amax) ---
+2026-08-13 19:32:04  [T03] run start
+2026-08-13 19:32:04 start
+2026-08-13 19:32:04 check1 done
+2026-08-13 19:32:04 check2 done
+2026-08-13 19:32:08 check3 done
+2026-08-13 19:32:08 check4 done
+2026-08-13 19:32:08 check5 done
+2026-08-13 19:32:17 check6 done
+2026-08-13 19:32:17 check7 done
+2026-08-13 19:32:17 summary: checks=26 failed=1 blocks=['C1']
+2026-08-13 19:32:17  [T03] run done exit=1  12.9s
+2026-08-13 19:32:17         T03 exit=1 caught=True blocks=['1'] за 12.9s
+2026-08-13 19:32:17  --- T04 tube Rmax_upper -> 1.05 ---
+2026-08-13 19:32:19  [T04] run start
+2026-08-13 19:32:19 start
+2026-08-13 19:32:19 check1 done
+2026-08-13 19:32:19 check2 done
+2026-08-13 19:32:23 check3 done
+2026-08-13 19:32:23 check4 done
+2026-08-13 19:32:23 check5 done
+2026-08-13 19:32:31 check6 done
+2026-08-13 19:32:31 check7 done
+2026-08-13 19:32:31 summary: checks=26 failed=2 blocks=['C3']
+2026-08-13 19:32:31  [T04] run done exit=1  12.2s
+2026-08-13 19:32:31         T04 exit=1 caught=True blocks=['3'] за 12.2s
+2026-08-13 19:32:31  --- T05 tube x128_lower -> -1e-3 ---
+2026-08-13 19:32:33  [T05] run start
+2026-08-13 19:32:33 start
+2026-08-13 19:32:33 check1 done
+2026-08-13 19:32:33 check2 done
+2026-08-13 19:32:37 check3 done
+2026-08-13 19:32:37 check4 done
+2026-08-13 19:32:37 check5 done
+2026-08-13 19:32:45 check6 done
+2026-08-13 19:32:45 check7 done
+2026-08-13 19:32:45 summary: checks=26 failed=1 blocks=['C3']
+2026-08-13 19:32:45  [T05] run done exit=1  12.7s
+2026-08-13 19:32:45         T05 exit=1 caught=True blocks=['3'] за 12.7s
+2026-08-13 19:32:45  --- T06 удалить один tube-JSON ---
+2026-08-13 19:32:47  [T06] run start
+2026-08-13 19:32:47 start
+2026-08-13 19:32:47 check1 done
+2026-08-13 19:32:47 check2 done
+2026-08-13 19:32:51 check3 done
+2026-08-13 19:32:51 check4 done
+2026-08-13 19:32:51 check5 done
+2026-08-13 19:33:00 check6 done
+2026-08-13 19:33:00 check7 done
+2026-08-13 19:33:00 summary: checks=26 failed=1 blocks=['C3']
+2026-08-13 19:33:00  [T06] run done exit=1  12.7s
+2026-08-13 19:33:00         T06 exit=1 caught=True blocks=['3'] за 12.7s
+2026-08-13 19:33:00  --- T07 переименовать рабочий диск в NEG_ ---
+2026-08-13 19:33:02  [T07] run start
+2026-08-13 19:33:02 start
+2026-08-13 19:33:02 check1 done
+2026-08-13 19:33:02 check2 done
+2026-08-13 19:33:06 check3 done
+2026-08-13 19:33:06 check4 done
+2026-08-13 19:33:06 check5 done
+2026-08-13 19:33:15 check6 done
+2026-08-13 19:33:15 check7 done
+2026-08-13 19:33:15 summary: checks=26 failed=0 blocks=[]
+2026-08-13 19:33:15  [T07] run done exit=0  12.9s
+2026-08-13 19:33:15         T07 exit=0 caught=False blocks=[] за 12.9s
+2026-08-13 19:33:15  --- T08 a1 neg-контроль 0.05 pass -> true ---
+2026-08-13 19:33:18  [T08] run start
+2026-08-13 19:33:18 start
+2026-08-13 19:33:18 check1 done
+2026-08-13 19:33:18 check2 done
+2026-08-13 19:33:22 check3 done
+2026-08-13 19:33:22 check4 done
+2026-08-13 19:33:22 check5 done
+2026-08-13 19:33:31 check6 done
+2026-08-13 19:33:31 check7 done
+2026-08-13 19:33:31 summary: checks=26 failed=1 blocks=['C5']
+2026-08-13 19:33:31  [T08] run done exit=1  13.5s
+2026-08-13 19:33:31         T08 exit=1 caught=True blocks=['5'] за 13.5s
+2026-08-13 19:33:31  --- T09 tube r_s != dom_budget_each ---
+2026-08-13 19:33:33  [T09] run start
+2026-08-13 19:33:33 start
+2026-08-13 19:33:33 check1 done
+2026-08-13 19:33:33 check2 done
+2026-08-13 19:33:37 check3 done
+2026-08-13 19:33:37 check4 done
+2026-08-13 19:33:37 check5 done
+2026-08-13 19:33:46 check6 done
+2026-08-13 19:33:46 check7 done
+2026-08-13 19:33:46 summary: checks=26 failed=1 blocks=['C3']
+2026-08-13 19:33:46  [T09] run done exit=1  12.5s
+2026-08-13 19:33:46         T09 exit=1 caught=True blocks=['3'] за 12.5s
+2026-08-13 19:33:46  --- T10 w33 коэф. возмущён в 20-м знаке ---
+2026-08-13 19:33:48  [T10] run start
+2026-08-13 19:33:48 start
+2026-08-13 19:33:48 check1 done
+2026-08-13 19:33:48 check2 done
+2026-08-13 19:33:52 check3 done
+2026-08-13 19:33:52 check4 done
+2026-08-13 19:33:52 check5 done
+2026-08-13 19:34:00 check6 done
+2026-08-13 19:34:00 check7 done
+2026-08-13 19:34:00 summary: checks=26 failed=1 blocks=['C6']
+2026-08-13 19:34:00  [T10] run done exit=1  12.2s
+2026-08-13 19:34:00         T10 exit=1 caught=True blocks=['6'] за 12.2s
+2026-08-13 19:34:00  --- T11 nDT2 -> 600 (q > 1) ---
+2026-08-13 19:34:02  [T11] run start
+2026-08-13 19:34:02 start
+2026-08-13 19:34:02 check1 done
+2026-08-13 19:34:02 check2 done
+2026-08-13 19:34:06 check3 done
+2026-08-13 19:34:06 check4 done
+2026-08-13 19:34:06 check5 done
+2026-08-13 19:34:15 check6 done
+2026-08-13 19:34:15 check7 done
+2026-08-13 19:34:15 summary: checks=26 failed=0 blocks=[]
+2026-08-13 19:34:15  [T11] run done exit=0  12.5s
+2026-08-13 19:34:15         T11 exit=0 caught=False blocks=[] за 12.5s
+2026-08-13 19:34:15  --- T12 косметика (ключи/пробелы/лишний ключ) ---
+2026-08-13 19:34:17  [T12] run start
+2026-08-13 19:34:17 start
+2026-08-13 19:34:17 check1 done
+2026-08-13 19:34:17 check2 done
+2026-08-13 19:34:20 check3 done
+2026-08-13 19:34:20 check4 done
+2026-08-13 19:34:20 check5 done
+2026-08-13 19:34:29 check6 done
+2026-08-13 19:34:29 check7 done
+2026-08-13 19:34:29 summary: checks=26 failed=0 blocks=[]
+2026-08-13 19:34:29  [T12] run done exit=0  12.4s
+2026-08-13 19:34:29         T12 exit=0 caught=False blocks=[] за 12.4s
+2026-08-13 19:34:29  step5: sha256 архива ПОСЛЕ (sandbox вернутa в чистое состояние)
+2026-08-13 19:34:31         изменённых файлов архива: 0  => АРХИВ НЕ ИЗМЕНИЛСЯ
+2026-08-13 19:34:31  === DONE ===
+2026-08-13 20:56:27 start
+2026-08-13 20:56:27 check1 done
+2026-08-13 20:56:27 check2 done
+2026-08-13 20:56:32 check3 done
+2026-08-13 20:56:32 check4 done
+2026-08-13 20:56:32 check5 done
+2026-08-13 20:56:40 check6 done
+2026-08-13 20:56:40 check7 done
+2026-08-13 20:56:40 summary: checks=26 failed=0 blocks=[]
+2026-08-13 20:56:41 start
+2026-08-13 20:56:41 check1 done
+2026-08-13 20:56:41 check2 done
+2026-08-13 20:56:45 check3 done
+2026-08-13 20:56:45 check4 done
+2026-08-13 20:56:45 check5 done
+2026-08-13 20:56:54 check6 done
+2026-08-13 20:56:54 check7 done
+2026-08-13 20:56:54 summary: checks=26 failed=2 blocks=['C1', 'C2']
+2026-08-13 20:56:55 start
+2026-08-13 20:56:55 check1 done
+2026-08-13 20:56:55 check2 done
+2026-08-13 20:56:59 check3 done
+2026-08-13 20:56:59 check4 done
+2026-08-13 20:56:59 check5 done
+2026-08-13 20:57:07 check6 done
+2026-08-13 20:57:07 check7 done
+2026-08-13 20:57:07 summary: checks=26 failed=3 blocks=['C1']
+2026-08-13 20:57:09 start
+2026-08-13 20:57:09 check1 done
+2026-08-13 20:57:09 check2 done
+2026-08-13 20:57:13 check3 done
+2026-08-13 20:57:13 check4 done
+2026-08-13 20:57:13 check5 done
+2026-08-13 20:57:22 check6 done
+2026-08-13 20:57:22 check7 done
+2026-08-13 20:57:22 summary: checks=26 failed=2 blocks=['C1']
+2026-08-13 20:57:24 start
+2026-08-13 20:57:24 check1 done
+2026-08-13 20:57:24 check2 done
+2026-08-13 20:57:27 check3 done
+2026-08-13 20:57:27 check4 done
+2026-08-13 20:57:27 check5 done
+2026-08-13 20:57:36 check6 done
+2026-08-13 20:57:36 check7 done
+2026-08-13 20:57:36 summary: checks=26 failed=2 blocks=['C3']
+2026-08-13 20:57:38 start
+2026-08-13 20:57:38 check1 done
+2026-08-13 20:57:38 check2 done
+2026-08-13 20:57:42 check3 done
+2026-08-13 20:57:42 check4 done
+2026-08-13 20:57:42 check5 done
+2026-08-13 20:57:51 check6 done
+2026-08-13 20:57:51 check7 done
+2026-08-13 20:57:51 summary: checks=26 failed=1 blocks=['C3']
+2026-08-13 20:57:53 start
+2026-08-13 20:57:53 check1 done
+2026-08-13 20:57:53 check2 done
+2026-08-13 20:57:57 check3 done
+2026-08-13 20:57:57 check4 done
+2026-08-13 20:57:57 check5 done
+2026-08-13 20:58:05 check6 done
+2026-08-13 20:58:05 check7 done
+2026-08-13 20:58:05 summary: checks=26 failed=2 blocks=['C3']
+2026-08-13 20:58:07 start
+2026-08-13 20:58:07 check1 done
+2026-08-13 20:58:07 check2 done
+2026-08-13 20:58:10 check3 done
+2026-08-13 20:58:10 check4 done
+2026-08-13 20:58:10 check5 done
+2026-08-13 20:58:18 check6 done
+2026-08-13 20:58:18 check7 done
+2026-08-13 20:58:18 summary: checks=26 failed=1 blocks=['C3']
+2026-08-13 20:58:20 start
+2026-08-13 20:58:20 check1 done
+2026-08-13 20:58:20 check2 done
+2026-08-13 20:58:24 check3 done
+2026-08-13 20:58:24 check4 done
+2026-08-13 20:58:24 check5 done
+2026-08-13 20:58:33 check6 done
+2026-08-13 20:58:33 check7 done
+2026-08-13 20:58:33 summary: checks=26 failed=1 blocks=['C5']
+2026-08-13 20:58:35 start
+2026-08-13 20:58:35 check1 done
+2026-08-13 20:58:35 check2 done
+2026-08-13 20:58:39 check3 done
+2026-08-13 20:58:39 check4 done
+2026-08-13 20:58:39 check5 done
+2026-08-13 20:58:47 check6 done
+2026-08-13 20:58:47 check7 done
+2026-08-13 20:58:47 summary: checks=26 failed=1 blocks=['C3']
+2026-08-13 20:58:50 start
+2026-08-13 20:58:50 check1 done
+2026-08-13 20:58:50 check2 done
+2026-08-13 20:58:54 check3 done
+2026-08-13 20:58:54 check4 done
+2026-08-13 20:58:54 check5 done
+2026-08-13 20:59:02 check6 done
+2026-08-13 20:59:02 check7 done
+2026-08-13 20:59:02 summary: checks=26 failed=1 blocks=['C6']
+2026-08-13 20:59:04 start
+2026-08-13 20:59:04 check1 done
+2026-08-13 20:59:04 check2 done
+2026-08-13 20:59:08 check3 done
+2026-08-13 20:59:08 check4 done
+2026-08-13 20:59:08 check5 done
+2026-08-13 20:59:16 check6 done
+2026-08-13 20:59:16 check7 done
+2026-08-13 20:59:16 summary: checks=26 failed=2 blocks=['C4']
+2026-08-13 20:59:18 start
+2026-08-13 20:59:18 check1 done
+2026-08-13 20:59:18 check2 done
+2026-08-13 20:59:22 check3 done
+2026-08-13 20:59:22 check4 done
+2026-08-13 20:59:22 check5 done
+2026-08-13 20:59:31 check6 done
+2026-08-13 20:59:31 check7 done
+2026-08-13 20:59:31 summary: checks=26 failed=0 blocks=[]

@@ -1,0 +1,41 @@
+{
+  "purpose": "Пересчёт P_star/P_ALL с честным сравнением двух веток (duhamel-рекурсия vs level_tail закрытая формула) для адъюдикации M3. Негативный контроль по M3.",
+  "done_by": "verify_E",
+  "precision": "mpmath dps=120",
+  "inputs": {
+    "delta": "4.669201609102990671853",
+    "K": 284,
+    "nh": 6.331193600692640,
+    "nDT": 22.19,
+    "nDT2": 193.63,
+    "pperp": 2.808542,
+    "nv0 (q2)": 111.550905121,
+    "Cs": 5.495835,
+    "mu": 0.35,
+    "u_D": 11.471516303,
+    "R_arc": 0.1,
+    "tmax = AU0*(u_D+R_arc)": 4.791047456488306,
+    "C1": 1280
+  },
+  "duhamel_recursion": {
+    "formula": "refined_Q_bound: s^2*nv0 + s*K*nh*w + (K/2)w^2 + (M3/6)a^3; kernel Cs*mu^j; sum over k=7..500, sup over k",
+    "P_star_M3_123479": 6.686142e-07,
+    "P_star_M3_1834": 3.947954e-07,
+    "pass_M3_1834_vs_3e-7": false
+  },
+  "level_tail_closed_form": {
+    "formula": "QCOEF = q2 + K*nh*C1*s8 + K*C1^2*s8^2/2 + M3*(nh+C1*s8)^3*s8/6; ratioP = mu/delta^2; kernel_sum = pperp + Cs*ratioP/(1-ratioP); P_ALL = QCOEF*s8^2*kernel_sum",
+    "s8 = t/delta^8": 2.1208375318e-05,
+    "P_ALL_M3_1834": 2.113425e-07,
+    "pass_M3_1834_vs_3e-7": true,
+    "P_ALL_M3_123479": 3.554169e-07,
+    "pass_M3_123479_vs_3e-7": false
+  },
+  "conclusions": {
+    "negative_control_M3": "M3=123479 -> 6.686e-7 (recursion) i 3.554e-7 (closed) > 3e-7: старый pass:false объяснён",
+    "applicability_Amax": "Amax=1.3479e-4 < 2e-4, соразмерно |s8|*(nh+C1*s8)=1.3485e-4, та же l1-норма, тот же объект (шар B(G,·))",
+    "package_value_passes": "P_all_levels_upper=2.113425e-7 <= 3e-7, pass:true",
+    "why_duhamel_recursion_fails_even_with_M3_1834": "пошаговая рекурсия не использует парный инвариант w<=C1*s^2, w_j раздувается, сумма 3.948e-7",
+    "verdict": "duhamel_ds устарел (M3=123479); актуальная величина из level_tail про-ходит; old файл не изменён (архив READ-ONLY)"
+  }
+}

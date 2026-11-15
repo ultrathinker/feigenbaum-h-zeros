@@ -1,0 +1,102 @@
+{
+  "precision_bits": 512,
+  "lemma_W_inequalities": {
+    "first_single_coeff_upper": 261.08040592290513,
+    "first_single_coeff_bound": 1000.0,
+    "first_single_coeff_pass": true,
+    "first_single_coeff_margin_pct": 73.89195940770949,
+    "intermediate_one_coeff_upper": 1279.2776472160413,
+    "intermediate_one_coeff_bound": 1280.0,
+    "intermediate_one_coeff_pass": true,
+    "intermediate_one_coeff_margin_pct": 0.0564338112467679,
+    "pair_output_coeff_upper": 936.8199883568948,
+    "pair_output_coeff_bound": 1000.0,
+    "pair_output_coeff_pass": true,
+    "pair_output_coeff_margin_pct": 6.318001164310518,
+    "lemma_W_pass": true,
+    "sp_upper": 4.5420467177994465e-06,
+    "c1_unscaled_upper": 27890.099559529168
+  },
+  "closed_form_P_all": {
+    "P_all_M3_1834_C1_1280_upper": 2.113425114987063e-07,
+    "P_all_M3_1834_C1_1280_pass_3e-7": true,
+    "P_all_M3_123479_C1_1280_upper": 3.5541694178253944e-07,
+    "P_all_M3_123479_C1_1280_pass_3e-7": false,
+    "QCOEF_M3_1834_C1_1280_upper": 162.1318460814013,
+    "kernel_sum_upper": 2.8982115942664417
+  },
+  "step_by_step_duhamel": {
+    "M3_1834": {
+      "M3": 1834,
+      "P_star_refined_step_by_step_upper": 3.9479535000604224e-07,
+      "P_star_k": 500,
+      "pass_3e-7": false
+    },
+    "M3_123479": {
+      "M3": 123479,
+      "P_star_refined_step_by_step_upper": 6.686142051012574e-07,
+      "P_star_k": 500,
+      "pass_3e-7": false
+    }
+  },
+  "c1_breaking_point": {
+    "breaking_point_C1_pass_below": 3049.990465082228,
+    "breaking_point_C1_fail_above": 3049.990465589799,
+    "breaking_point_bracket": [
+      3049.990465082228,
+      3049.990465589799
+    ],
+    "one_coeff_required_floor": 1279.2776472160413,
+    "headroom_factor_vs_required": 2.3841505178485725,
+    "table": [
+      {
+        "C1": 1280,
+        "P_all_upper": 2.113425114987063e-07,
+        "pass_3e-7": true
+      },
+      {
+        "C1": 1500,
+        "P_all_upper": 2.2233373212598386e-07,
+        "pass_3e-7": true
+      },
+      {
+        "C1": 2000,
+        "P_all_upper": 2.473437758970031e-07,
+        "pass_3e-7": true
+      },
+      {
+        "C1": 3000,
+        "P_all_upper": 2.974888506921729e-07,
+        "pass_3e-7": true
+      },
+      {
+        "C1": 3050,
+        "P_all_upper": 3.000004789923499e-07,
+        "pass_3e-7": false
+      },
+      {
+        "C1": 3500,
+        "P_all_upper": 3.2262388183722574e-07,
+        "pass_3e-7": false
+      },
+      {
+        "C1": 5000,
+        "P_all_upper": 3.982789509876705e-07,
+        "pass_3e-7": false
+      }
+    ]
+  },
+  "nDT_headroom": {
+    "nDT_current": 22.19,
+    "one_coeff_current_upper": 1279.2776472160413,
+    "C1_breaking_point_used": 3049.990465082228,
+    "joint_constraint": "a valid C1 exists iff one_coeff(nDT) <= C1_break, because P_all(C1) is monotone increasing; the package picks the smallest valid C1 = ceil(one_coeff) to minimise P_all. nDT may grow until one_coeff reaches the breaking C1.",
+    "nDT_at_which_one_coeff_hits_C1_break_bracket": [
+      60.794095746745896,
+      60.79409575369895
+    ],
+    "nDT_growth_factor_vs_current": 2.739706883584763,
+    "P_all_at_breaking_nDT_with_C1_eq_one_coeff_upper": 2.9999999998596354e-07,
+    "note": "one_coeff is the only nDT-dependent inequality of Lemma W; it is dominated by nDT*C0/d2 ~ 1018 of 1279. The 2.4x C1 headroom thus transfers almost fully to nDT (factor ~2.74x, slightly less than C1's 2.4x because of the ~261 nDT-independent offset)."
+  }
+}

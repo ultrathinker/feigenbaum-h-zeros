@@ -1,0 +1,30 @@
+[11:07:17] EPS_G=[4.66763638903390196090169834095155141135141771641701926346857324188557103913759434436390155183333555154567704078825667662551426670818983145637699076570541e-61 +/- 1.82e-214] EPS_H=[1.62863020418366466937783513495523016020808315434363124859825288831932366396358228201384036829434268609719038785530395076406605988748457355020239959869434e-29 +/- 3.41e-182] (CL-34, same source as census_A_certificate.py)
+[11:07:17] === winding_certificate.py: rigorous wind(x_2^m)=0 over 23(+2) contours ===
+[11:07:17] prec_bits=512
+[11:07:17] loaded 25 disks (23 required, 2 optional): Z40, Z60, Z63, Z65, Z66, Z70, Z39, Z67, Z38, Z71, Z74, Z01, Z57, Z59, Z02, Z64, Z69, Z68, Z17, Z05, Z19, Z73, Z72, D_MINUS, D_PLUS
+[11:07:24] Z40  [pack A m=7 N=32]  wind=[+/- 1.24e-25] cand=0 unique=True strictly_zero=True  min|x_128|>=7.3674e-03  cov_margin>=9.81e-09  (7.0s)  PASS=True
+[11:07:31] Z60  [pack A m=7 N=32]  wind=[+/- 1.34e-25] cand=0 unique=True strictly_zero=True  min|x_128|>=7.4480e-03  cov_margin>=9.81e-09  (7.3s)  PASS=True
+[11:07:39] Z63  [pack A m=7 N=32]  wind=[+/- 1.54e-25] cand=0 unique=True strictly_zero=True  min|x_128|>=6.7041e-03  cov_margin>=9.81e-09  (7.4s)  PASS=True
+[11:07:46] Z65  [pack A m=7 N=32]  wind=[+/- 1.58e-25] cand=0 unique=True strictly_zero=True  min|x_128|>=7.3878e-03  cov_margin>=4.91e-09  (7.3s)  PASS=True
+[11:07:54] Z66  [pack A m=7 N=32]  wind=[+/- 1.61e-25] cand=0 unique=True strictly_zero=True  min|x_128|>=7.4769e-03  cov_margin>=4.91e-09  (7.4s)  PASS=True
+[11:08:01] Z70  [pack A m=7 N=32]  wind=[+/- 1.63e-25] cand=0 unique=True strictly_zero=True  min|x_128|>=7.7033e-03  cov_margin>=4.91e-09  (7.3s)  PASS=True
+[11:08:08] Z39  [pack A m=7 N=32]  wind=[+/- 1.57e-25] cand=0 unique=True strictly_zero=True  min|x_128|>=6.4176e-03  cov_margin>=9.81e-09  (7.3s)  PASS=True
+[11:08:16] Z67  [pack A m=7 N=32]  wind=[+/- 1.62e-25] cand=0 unique=True strictly_zero=True  min|x_128|>=7.0306e-03  cov_margin>=4.91e-09  (7.3s)  PASS=True
+[11:08:23] Z38  [pack A m=7 N=32]  wind=[+/- 1.75e-25] cand=0 unique=True strictly_zero=True  min|x_128|>=5.6652e-03  cov_margin>=9.81e-09  (7.3s)  PASS=True
+[11:08:30] Z71  [pack A m=7 N=32]  wind=[+/- 1.78e-25] cand=0 unique=True strictly_zero=True  min|x_128|>=5.7132e-03  cov_margin>=9.81e-09  (7.3s)  PASS=True
+[11:08:38] Z74  [pack A m=7 N=32]  wind=[+/- 1.80e-25] cand=0 unique=True strictly_zero=True  min|x_128|>=6.6843e-03  cov_margin>=9.81e-09  (7.3s)  PASS=True
+[11:08:45] Z01  [pack A m=7 N=32]  wind=[+/- 1.50e-25] cand=0 unique=True strictly_zero=True  min|x_128|>=4.3493e-03  cov_margin>=9.81e-09  (7.3s)  PASS=True
+[11:08:52] Z57  [pack B m=7 N=32]  wind=[+/- 1.32e-25] cand=0 unique=True strictly_zero=True  min|x_128|>=7.7012e-03  cov_margin>=9.81e-09  (7.5s)  PASS=True
+[11:09:00] Z59  [pack B m=7 N=32]  wind=[+/- 1.39e-25] cand=0 unique=True strictly_zero=True  min|x_128|>=6.5553e-03  cov_margin>=9.81e-09  (7.3s)  PASS=True
+[11:09:07] Z02  [pack B m=7 N=32]  wind=[+/- 1.47e-25] cand=0 unique=True strictly_zero=True  min|x_128|>=5.6820e-03  cov_margin>=9.81e-09  (7.3s)  PASS=True
+[11:09:14] Z64  [pack B m=7 N=32]  wind=[+/- 1.59e-25] cand=0 unique=True strictly_zero=True  min|x_128|>=7.2823e-03  cov_margin>=4.91e-09  (7.4s)  PASS=True
+[11:09:22] Z69  [pack B m=7 N=32]  wind=[+/- 1.63e-25] cand=0 unique=True strictly_zero=True  min|x_128|>=7.5994e-03  cov_margin>=4.91e-09  (7.4s)  PASS=True
+[11:09:29] Z68  [pack B m=7 N=32]  wind=[+/- 1.62e-25] cand=0 unique=True strictly_zero=True  min|x_128|>=7.3891e-03  cov_margin>=4.91e-09  (7.3s)  PASS=True
+[11:09:36] Z17  [pack B m=7 N=32]  wind=[+/- 1.61e-25] cand=0 unique=True strictly_zero=True  min|x_128|>=7.0270e-03  cov_margin>=4.91e-09  (7.3s)  PASS=True
+[11:09:44] Z05  [pack B m=7 N=32]  wind=[+/- 1.57e-25] cand=0 unique=True strictly_zero=True  min|x_128|>=5.4797e-03  cov_margin>=9.81e-09  (7.3s)  PASS=True
+[11:09:51] Z19  [pack B m=7 N=32]  wind=[+/- 1.75e-25] cand=0 unique=True strictly_zero=True  min|x_128|>=5.2088e-03  cov_margin>=9.81e-09  (7.4s)  PASS=True
+[11:09:59] Z73  [pack B m=7 N=32]  wind=[+/- 1.78e-25] cand=0 unique=True strictly_zero=True  min|x_128|>=5.8281e-03  cov_margin>=9.81e-09  (7.5s)  PASS=True
+[11:10:14] Z72  [pack 17 m=8 N=32]  wind=[+/- 1.20e-24] cand=0 unique=True strictly_zero=True  min|x_256|>=2.3636e-03  cov_margin>=9.81e-09  (14.9s)  PASS=True
+[11:10:21] D_MINUS  [pack 3B_fix1 m=7 N=32]  wind=[+/- 4.24e-26] cand=0 unique=True strictly_zero=True  min|x_128|>=1.1166e-03  cov_margin>=1.64e-08  (7.3s)  PASS=True
+[11:10:28] D_PLUS  [pack 3B_fix1 m=7 N=32]  wind=[+/- 6.84e-26] cand=0 unique=True strictly_zero=True  min|x_128|>=5.0509e-03  cov_margin>=1.64e-08  (7.3s)  PASS=True
+[11:10:28] === SUMMARY: required PASS 23/23, optional PASS 2/2, total 191.2s ===

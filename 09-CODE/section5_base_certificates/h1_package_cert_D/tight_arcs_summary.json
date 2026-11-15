@@ -1,0 +1,74 @@
+{
+  "r_s_tight": 3.566e-07,
+  "r_s_conservative": 5.44e-07,
+  "ratio": 0.6555114515857721,
+  "disk": {
+    "label": "Z72",
+    "re": "4.79165",
+    "im": "7.177607",
+    "rho": "0.1",
+    "n_arcs": 32
+  },
+  "arcs": {
+    "6": {
+      "Rmax_conservative": 0.884996133213671,
+      "Rmax_tight": 0.8828999861628851,
+      "x128_lower": 0.006114987803636036,
+      "r_s_in_json": 3.5660000000000006e-07,
+      "N_s_tube_upper": 18706194179.769512,
+      "phih_tube_upper": 17575262199.05147,
+      "kappa_D": 0.00805124986954775,
+      "tube_json": "cert_slice_Z72_outerbox_tube_K100_P732a6.json"
+    },
+    "13": {
+      "Rmax_conservative": 0.7143768149736405,
+      "Rmax_tight": 0.7136531988478277,
+      "x128_lower": 0.0060065187071989545,
+      "r_s_in_json": 3.5660000000000006e-07,
+      "N_s_tube_upper": 4615968936.999411,
+      "phih_tube_upper": 5236522339.911756,
+      "kappa_D": 0.0037464963781472793,
+      "tube_json": "cert_slice_Z72_outerbox_tube_K100_P732a13.json"
+    },
+    "12": {
+      "Rmax_conservative": 0.5365224978508042,
+      "Rmax_tight": 0.5356536483751738,
+      "x128_lower": 0.006022070109672391,
+      "r_s_in_json": 3.5660000000000006e-07,
+      "N_s_tube_upper": 5694944422.331768,
+      "phih_tube_upper": 5907703246.359853,
+      "kappa_D": 0.0044367349483882546,
+      "tube_json": "cert_slice_Z72_outerbox_tube_K100_P732a12.json"
+    },
+    "8": {
+      "Rmax_conservative": 0.6402520439773116,
+      "Rmax_tight": 0.6392464561659429,
+      "x128_lower": 0.006088322459264449,
+      "r_s_in_json": 3.5660000000000006e-07,
+      "N_s_tube_upper": 7226815367.845578,
+      "phih_tube_upper": 7102421865.6152115,
+      "kappa_D": 0.00576054368826906,
+      "tube_json": "cert_slice_Z72_outerbox_tube_K100_P732a8.json"
+    },
+    "14": {
+      "Rmax_conservative": 0.5197376009868044,
+      "Rmax_tight": 0.5194464420824656,
+      "x128_lower": 0.005992613251068697,
+      "r_s_in_json": 3.5660000000000006e-07,
+      "N_s_tube_upper": 1573963496.7207778,
+      "phih_tube_upper": 2182602004.653019,
+      "kappa_D": 0.0027177965797213766,
+      "tube_json": "cert_slice_Z72_outerbox_tube_K100_P732a14.json"
+    },
+    "11": {
+      "Rmax_conservative": 0.5082233538322567,
+      "Rmax_tight": 0.5079905612969066,
+      "x128_lower": 0.006038671008798117,
+      "r_s_in_json": 3.5660000000000006e-07,
+      "N_s_tube_upper": 8024275820.576661,
+      "phih_tube_upper": 7808176208.067678,
+      "kappa_D": 0.005388550947695192,
+      "tube_json": "cert_slice_Z72_outerbox_tube_K100_P732a11.json"
+    }
+  }
+}

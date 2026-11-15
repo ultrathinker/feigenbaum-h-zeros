@@ -1,0 +1,24 @@
+{
+  "precision_bits": 512,
+  "K": "284",
+  "P_exit_ceiling": "2.11342511498706305960640528773523864323907713192939497278914726163078376412196660789387249121949423633133481700603311881839856528230982781601925112174955e-7",
+  "D_exit_ceiling": "5.17229317277152367545791838874752540931347322132968321558092591484127464050613107553712476328686351360569567798387992534866727690209564075123252019867387e-8",
+  "P_perp_upper": "2.808542",
+  "r_s_upper": "[3.56608537619127112425819859047221389405148520272736608855455574470279808026160364620899123691261565895425159208965332814825823440282637732269405959613194e-7 +/- 1.22e-160]",
+  "tube_radius": "5.44e-7",
+  "headroom_lower": "[1.87391462380872887574180140952778610594851479727263391144544425529720191973839635379100876308738434104574840791034667185174176559717362267730594040386806e-7 +/- 1.25e-160]",
+  "pass": true,
+  "note": "r_s here is the TWO-TERM radius P_exit + P_perp*D_exit. The WORKING tail quantity is the three-term P_tail(m0) (adds the l-component drift ||h||_1*e_star/(1-1/delta)); see level_tail_certificate_strict.json tail_three_term.",
+  "sources": [
+    "DATA/inputs/w36/duhamel_ds/duhamel_ds.log   (strict PASS; M3=1834 via level_tail)",
+    "DATA/inputs/w36/ld_ds/compute_ld.log        (strict PASS; conservative M3=123479 robustness)",
+    "CERT/level_tail_certificate_strict.json      (P_all, D_star, e_star -- strict norms)",
+    "DATA/inputs/w36/audit_codex/k_global_certificate.json  (K=284)"
+  ],
+  "superseded": {
+    "w36/audit_codex/duhamel_ds.log": "SUPERSEDED. This is the COARSE M3=123479 audit (duhamel_audit.py:56), giving P_star_refined=6.69e-7 > 3e-7 (FAIL). It is kept for the M3-resolution narrative (Amax provenance) but is NOT a tail bound. The strict tail is level_tail_certificate (M3=1834, applicable).",
+    "w36/audit_codex/compute_ld.log": "SUPERSEDED as a D_star source for the headline radius. compute_ld.log reports the CONSERVATIVE D_cp*=6.252e-8 (M3=123479); the value actually used (D_EXIT=5.17e-8) is the TIGHT one from level_tail (M3=1834). The strict w36/ld_ds/compute_ld.log is the kept source; the audit_codex twin is the namesake that once caused a provenance confusion.",
+    "duhamel_audit.py": "SUPERSEDED by level_tail_certificate.py (closed form, Lemma W).",
+    "ld_audit.py": "SUPERSEDED by level_tail_certificate.py exit_de (closed form)."
+  }
+}

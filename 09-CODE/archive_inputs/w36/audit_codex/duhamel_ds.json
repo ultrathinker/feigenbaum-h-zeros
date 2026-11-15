@@ -1,0 +1,21 @@
+{
+  "target": 3e-07,
+  "measured_max_W": 4.958e-08,
+  "rough_triangle": 7.266185e-06,
+  "P_star_refined": 6.686142051017625e-07,
+  "k_star_refined": 500,
+  "P_star_crude": 1.4409279182835755e-05,
+  "k_star_crude": 500,
+  "P_hh_only": 2.802298748924845e-07,
+  "Amax": 0.00013479335033794542,
+  "tmax": 4.791047456488307,
+  "N_MAX": 500,
+  "pass": false,
+  "improvement_vs_triangle": 10.867530101150173,
+  "nDT": 22.19,
+  "nDT2": 193.63,
+  "mu": 0.35,
+  "Cs_res": 5.495835,
+  "nv0": 111.550905121,
+  "M3": 123479.0
+}

@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "Zeros of the universal scaling function of the period-doubling cascade: rigorous computer-assisted localization, holomorphy of the limit, and the link with the Mandelbrot set"
+type: software
+authors:
+  - family-names: Borzenkov
+    given-names: Yevhen
+    orcid: "https://orcid.org/0009-0002-7946-589X"
+version: "2.5"
+date-released: "2026-11-15"
+license: MIT
+repository-code: "https://github.com/ultrathinker/feigenbaum-h-zeros"
+keywords:
+  - Feigenbaum
+  - period doubling
+  - renormalization
+  - computer-assisted proof
+  - interval arithmetic
+  - Mandelbrot set

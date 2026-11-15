@@ -1,0 +1,66 @@
+2026-08-13 20:56:25  === BRIEF F2: повторная батарея порч против РЕМОНТНОГО verify_E ===
+2026-08-13 20:56:25  ARCH (READ-ONLY) = <ARCHIVE_ROOT>
+2026-08-13 20:56:25  SANDBOX          = <ARCHIVE_ROOT>\article_v1\v3_work\h1_package\tamper_F\sandbox
+2026-08-13 20:56:25  VERIFY_ORIG      = <ARCHIVE_ROOT>\article_v1\v3_work\h1_package\verify_E\h1_verify_pkg.py  (ремонтный, READ-ONLY)
+2026-08-13 20:56:25  sha256 verify_E (ремонтный) = 7a2f42f545e673220f870599e529f5eb29f1f8182c8b4113bbfc3f77913474e7
+2026-08-13 20:56:25  step1: sha256 архива ДО
+2026-08-13 20:56:25  step2: refresh копии верификатора (verify_E -> tamper_F), одна строка
+2026-08-13 20:56:25         sha256 verify_E/h1_verify_pkg.py (ремонтный) = 7a2f42f545e673220f870599e529f5eb29f1f8182c8b4113bbfc3f77913474e7
+2026-08-13 20:56:25         sha256 копии (патченой)                      = bf999bfc5460d72a1622c1ac47de947d60c3d9c4554d5a875a3652cd2dae00b7
+2026-08-13 20:56:25         diff: -ARCH = Path(r"<ARCHIVE_ROOT>")
+2026-08-13 20:56:25                +ARCH = Path(r"<ARCHIVE_ROOT>/article_v1/v3_work/h1_package/tamper_F/sandbox")
+2026-08-13 20:56:25  step3: сборка чистой песочницы + baseline (ожидание exit 0)
+2026-08-13 20:56:27  [T00_baseline] run start
+2026-08-13 20:56:40  [T00_baseline] run done exit=0  12.4s
+2026-08-13 20:56:40         baseline exit=0 упавшие_блоки=[] за 12.4s
+2026-08-13 20:56:40  --- T01 P_all_levels_upper -> 2.9e-7 ---
+2026-08-13 20:56:41  [T01] run start
+2026-08-13 20:56:54  [T01] run done exit=1  12.8s
+2026-08-13 20:56:54         T01 exit=1 caught=True blocks=['1', '2'] за 12.8s
+2026-08-13 20:56:54  --- T02 M3_chosen -> 123479 ---
+2026-08-13 20:56:55  [T02] run start
+2026-08-13 20:57:07  [T02] run done exit=1  12.0s
+2026-08-13 20:57:07         T02 exit=1 caught=True blocks=['1'] за 12.0s
+2026-08-13 20:57:07  --- T03 radius -> 1e-4 (ниже Amax) ---
+2026-08-13 20:57:09  [T03] run start
+2026-08-13 20:57:22  [T03] run done exit=1  13.0s
+2026-08-13 20:57:22         T03 exit=1 caught=True blocks=['1'] за 13.0s
+2026-08-13 20:57:22  --- T04 tube Rmax_upper -> 1.05 ---
+2026-08-13 20:57:23  [T04] run start
+2026-08-13 20:57:36  [T04] run done exit=1  12.6s
+2026-08-13 20:57:36         T04 exit=1 caught=True blocks=['3'] за 12.6s
+2026-08-13 20:57:36  --- T05 tube x128_lower -> -1e-3 ---
+2026-08-13 20:57:38  [T05] run start
+2026-08-13 20:57:51  [T05] run done exit=1  12.6s
+2026-08-13 20:57:51         T05 exit=1 caught=True blocks=['3'] за 12.6s
+2026-08-13 20:57:51  --- T06 удалить один tube-JSON ---
+2026-08-13 20:57:53  [T06] run start
+2026-08-13 20:58:05  [T06] run done exit=1  12.4s
+2026-08-13 20:58:05         T06 exit=1 caught=True blocks=['3'] за 12.4s
+2026-08-13 20:58:05  --- T07 переименовать рабочий диск в NEG_ ---
+2026-08-13 20:58:07  [T07] run start
+2026-08-13 20:58:18  [T07] run done exit=1  11.8s
+2026-08-13 20:58:18         T07 exit=1 caught=True blocks=['3'] за 11.8s
+2026-08-13 20:58:18  --- T08 a1 neg-контроль 0.05 pass -> true ---
+2026-08-13 20:58:20  [T08] run start
+2026-08-13 20:58:33  [T08] run done exit=1  12.7s
+2026-08-13 20:58:33         T08 exit=1 caught=True blocks=['5'] за 12.7s
+2026-08-13 20:58:33  --- T09 tube r_s != dom_budget_each ---
+2026-08-13 20:58:35  [T09] run start
+2026-08-13 20:58:47  [T09] run done exit=1  12.4s
+2026-08-13 20:58:47         T09 exit=1 caught=True blocks=['3'] за 12.4s
+2026-08-13 20:58:47  --- T10 w33 коэф. возмущён в 20-м знаке ---
+2026-08-13 20:58:50  [T10] run start
+2026-08-13 20:59:02  [T10] run done exit=1  12.7s
+2026-08-13 20:59:02         T10 exit=1 caught=True blocks=['6'] за 12.7s
+2026-08-13 20:59:02  --- T11 nDT2 -> 600 (q > 1) ---
+2026-08-13 20:59:04  [T11] run start
+2026-08-13 20:59:16  [T11] run done exit=1  12.0s
+2026-08-13 20:59:16         T11 exit=1 caught=True blocks=['4'] за 12.0s
+2026-08-13 20:59:16  --- T12 косметика (ключи/пробелы/лишний ключ) ---
+2026-08-13 20:59:18  [T12] run start
+2026-08-13 20:59:31  [T12] run done exit=0  12.6s
+2026-08-13 20:59:31         T12 exit=0 caught=False blocks=[] за 12.6s
+2026-08-13 20:59:31  step5: sha256 архива ПОСЛЕ
+2026-08-13 20:59:33         изменённых файлов архива: 0  => АРХИВ НЕ ИЗМЕНИЛСЯ
+2026-08-13 20:59:33  === DONE ===

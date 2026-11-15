@@ -1,0 +1,24 @@
+{
+  "nDT_upper": 22.191604188675928,
+  "nDT2_upper": 193.6344378254754,
+  "method": "At 512-bit precision, Arb encloses every entry of the 100-mode head block of DT at the polynomial centre and its interval matrix square; l1 norms are rigorous column suprema. The omitted input and output blocks are bounded by weighted composition majorants at sigma=1.38, and the centre-to-fixed-point correction uses ||D^2T||<=223.77 and ||G-G0||_1<=1e-20. The square is bounded by the resulting 2x2 head/tail block product, followed by the rigorous perturbation bound (2||A0||+eps)eps.",
+  "precision_bits": 512,
+  "head_modes": 100,
+  "tail_bound_used": {
+    "head_to_output_tail_upper": 2.7742243966457196e-12,
+    "tail_input_to_all_output_upper": 2.95432914073727e-16,
+    "weighted_DT_at_sigma_upper": 269.8051447672598,
+    "q_u_at_1_upper": 0.4957770642296199,
+    "q_v_at_1_upper": 0.692979105570083,
+    "q_u_at_sigma_upper": 0.5564358715750459,
+    "q_v_at_sigma_upper": 0.983797712072324,
+    "fixed_point_radius": "1e-20",
+    "D2T_bound": "223.77",
+    "operator_perturbation_upper": 2.2377000000000004e-18
+  },
+  "comparison_to_midpoint_22_191604188673146": {
+    "rigorous_upper_is_above": true,
+    "upper_minus_midpoint": 2.7784478540673053e-12
+  },
+  "pass_or_note": "RIGOROUS. The legacy literals 22.19 and 193.63 are below these certified upper bounds and should not be retained as upper bounds."
+}

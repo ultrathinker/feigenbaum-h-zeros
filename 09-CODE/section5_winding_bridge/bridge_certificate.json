@@ -1,0 +1,1076 @@
+{
+  "run": "bridge_certificate",
+  "oid": "bridge14",
+  "date": "2026-08-14T15:05:31",
+  "task": "close kit §5.3(v)/§8(5): denominator x_{2^m} of the LIMIT slice has no zeros inside any of the 25 disks (strict, assembled from pinned components + new m=8 windings for Z57/Z60 + convexity homotopy, see REPORT_BRIDGE.md)",
+  "prec_bits": 512,
+  "sha256_pins": {
+    "winding_certificate.json": "9d6415e496b3d2dd6ac87dab80307ccf56ce97fd194c4c8c3f87461e6c2c9955",
+    "h1pkg_certificate.json": "02f5290d4a97e0902463400fd80e4f96683f8b419f6331895063e8a36c5445b7",
+    "m8_certificate.json": "2f4889c3f9eca37c8d467ef0165ebc2d890845ba2285868d44f85d4fa44f2700",
+    "census_A_certificate.json": "dfc073db17ae6677e29c7f0f5f549503dc667b07fe017bc982bb533dc6153748",
+    "census_B_certificate.json": "36dc9dc10156261baac672e5f3662c0da474a4c74a61552b7978e498091bb417",
+    "z72_certificate.json": "7473b9ad26a9a02d306351439bc6a8cb19d0db3cebe5c9fed96a6dfd86ff3ebb",
+    "localization_certificate.json": "79b12ad1fcb5a26ac8e832af5737fdf71b2fe478b01bb2a9259205713c02a506",
+    "x4_common.py": "1770a7bec2677e999a608543b5c2dc70b19e4cf00b554ee9a776db4a3e020f08",
+    "w33_gh_hiprec.json": "7d4acc22f96a5ec473afa5b88ba4669e622aef8546c448a471068e5ff29284d8",
+    "cl34_certificate.json": "07568db34c11e046bb679144c293a66328f8ad9d64b39d35a944406981c124c6",
+    "absolute_margins_arb.json": "cf1f88aae5c3665cbb69b2ca574c6390e3f26878db3e78699056edbdba879918"
+  },
+  "new_windings": [
+    {
+      "label": "Z57",
+      "m": 8,
+      "centre_re": "8.589396",
+      "centre_im": "3.974588",
+      "rho": "0.1",
+      "n_arcs": 32,
+      "tiling_ok": true,
+      "arc_disk_coverage_ok": true,
+      "arc_disk_coverage_worst_margin": 9.81353486577122e-09,
+      "domain_ok": true,
+      "max_w_upper": 0.4,
+      "denominator_nonzero_on_contour": true,
+      "min_abs_denominator_lower": 0.003077013469675926,
+      "winding_ball": "[+/- 8.96e-25]",
+      "winding_candidate": 0,
+      "winding_unique": true,
+      "strictly_zero": true,
+      "elapsed_s": 16.45,
+      "pass": true,
+      "required": true
+    },
+    {
+      "label": "Z60",
+      "m": 8,
+      "centre_re": "8.26332724866471",
+      "centre_im": "4.01596385048377",
+      "rho": "0.1",
+      "n_arcs": 32,
+      "tiling_ok": true,
+      "arc_disk_coverage_ok": true,
+      "arc_disk_coverage_worst_margin": 9.81353486577122e-09,
+      "domain_ok": true,
+      "max_w_upper": 0.4,
+      "denominator_nonzero_on_contour": true,
+      "min_abs_denominator_lower": 0.002975847848292178,
+      "winding_ball": "[+/- 9.10e-25]",
+      "winding_candidate": 0,
+      "winding_unique": true,
+      "strictly_zero": true,
+      "elapsed_s": 19.12,
+      "pass": true,
+      "required": true
+    },
+    {
+      "label": "Z72",
+      "m": 7,
+      "centre_re": "4.758336330290482",
+      "centre_im": "7.1277051021354385",
+      "rho": "1/10",
+      "n_arcs": 32,
+      "tiling_ok": true,
+      "arc_disk_coverage_ok": true,
+      "arc_disk_coverage_worst_margin": 9.81353486577122e-09,
+      "domain_ok": true,
+      "max_w_upper": 0.4,
+      "denominator_nonzero_on_contour": true,
+      "min_abs_denominator_lower": 0.005915693721971405,
+      "winding_ball": "[+/- 1.78e-25]",
+      "winding_candidate": 0,
+      "winding_unique": true,
+      "strictly_zero": true,
+      "elapsed_s": 9.5,
+      "pass": true,
+      "required": true
+    }
+  ],
+  "tube_reconciliation": {
+    "n_files_total_here": 1542,
+    "n_files_total_h1pkg": 1542,
+    "n_working_here": 1465,
+    "n_working_h1pkg": 1465,
+    "n_neg_here": 77,
+    "n_neg_h1pkg": 77,
+    "counts_match": true,
+    "x128_worst_here": 0.0011186050146123545,
+    "x128_worst_h1pkg": 0.0011186050146123545,
+    "x128_worst_match": true
+  },
+  "containment": {
+    "P_tail_m0_primary_upper": 4.569263785657037e-07,
+    "tube_radius": 5.44e-07,
+    "min_r_s_across_scanned_arcs": 5.440000000000001e-07,
+    "containment_margin": 8.70736214342963e-08,
+    "containment_ok": true,
+    "containment_ok_vs_min_rs": true,
+    "note": "P_tail bounds ||slice_inf - base||_1 uniformly in u (h1pkg tail_resolution, primary/tight variant M3=1834, applicability argued in h1pkg m3_resolution); every tube arc certifies x128 != 0 for ALL perturbations up to r_s; convexity of the ball closes the homotopy (bridge lemma, REPORT_BRIDGE.md)."
+  },
+  "stray_tube_labels_nonblocking": [
+    "ST (group point14_m8_base)"
+  ],
+  "legacy_z72_old_contour_arcs_nonblocking": 24,
+  "refinement_families_nonblocking": {
+    "point17_z72_geometry:Z72_stage9_L7": {
+      "n_arcs": 128,
+      "level": 7,
+      "contiguous_full": false,
+      "min_x128_lower": 0.005983026703476579
+    },
+    "point17_z72_geometry:Z72_stage9_L8": {
+      "n_arcs": 128,
+      "level": 8,
+      "contiguous_full": false,
+      "min_x128_lower": 0.0023904671290472506
+    }
+  },
+  "bridge_table": [
+    {
+      "label": "D_MINUS",
+      "levels": [
+        7
+      ],
+      "required_levels": [
+        7
+      ],
+      "bridged_levels": [
+        7
+      ],
+      "rows": [
+        {
+          "level_m": 7,
+          "required": true,
+          "winding_strictly_zero": true,
+          "winding_source": "winding_certificate.json",
+          "tube_families": [
+            {
+              "family": "point3B_localize_two_roots_agent_fix1:D_MINUS",
+              "group": "point3B_localize_two_roots_agent_fix1",
+              "n_arcs": 48,
+              "contiguous_full": true,
+              "min_x128_lower": 0.0011186050146123545
+            }
+          ],
+          "tube_n_arcs": 48,
+          "tube_min_x128_lower": 0.0011186050146123545,
+          "coverage_complete": true,
+          "bridged": true
+        }
+      ],
+      "disk_bridged": true
+    },
+    {
+      "label": "D_PLUS",
+      "levels": [
+        7
+      ],
+      "required_levels": [
+        7
+      ],
+      "bridged_levels": [
+        7
+      ],
+      "rows": [
+        {
+          "level_m": 7,
+          "required": true,
+          "winding_strictly_zero": true,
+          "winding_source": "winding_certificate.json",
+          "tube_families": [
+            {
+              "family": "point3B_localize_two_roots_agent_fix1:D_PLUS",
+              "group": "point3B_localize_two_roots_agent_fix1",
+              "n_arcs": 48,
+              "contiguous_full": true,
+              "min_x128_lower": 0.005054457124972167
+            }
+          ],
+          "tube_n_arcs": 48,
+          "tube_min_x128_lower": 0.005054457124972167,
+          "coverage_complete": true,
+          "bridged": true
+        }
+      ],
+      "disk_bridged": true
+    },
+    {
+      "label": "Z01",
+      "levels": [
+        7
+      ],
+      "required_levels": [
+        7
+      ],
+      "bridged_levels": [
+        7
+      ],
+      "rows": [
+        {
+          "level_m": 7,
+          "required": true,
+          "winding_strictly_zero": true,
+          "winding_source": "winding_certificate.json",
+          "tube_families": [
+            {
+              "family": "point10_layer1_census_A:Z01",
+              "group": "point10_layer1_census_A",
+              "n_arcs": 32,
+              "contiguous_full": true,
+              "min_x128_lower": 0.004349307507007647
+            }
+          ],
+          "tube_n_arcs": 32,
+          "tube_min_x128_lower": 0.004349307507007647,
+          "coverage_complete": true,
+          "bridged": true
+        }
+      ],
+      "disk_bridged": true
+    },
+    {
+      "label": "Z02",
+      "levels": [
+        7
+      ],
+      "required_levels": [
+        7
+      ],
+      "bridged_levels": [
+        7
+      ],
+      "rows": [
+        {
+          "level_m": 7,
+          "required": true,
+          "winding_strictly_zero": true,
+          "winding_source": "winding_certificate.json",
+          "tube_families": [
+            {
+              "family": "point10_layer1_census_B:Z02",
+              "group": "point10_layer1_census_B",
+              "n_arcs": 32,
+              "contiguous_full": true,
+              "min_x128_lower": 0.005681980700156725
+            }
+          ],
+          "tube_n_arcs": 32,
+          "tube_min_x128_lower": 0.005681980700156725,
+          "coverage_complete": true,
+          "bridged": true
+        }
+      ],
+      "disk_bridged": true
+    },
+    {
+      "label": "Z05",
+      "levels": [
+        7
+      ],
+      "required_levels": [
+        7
+      ],
+      "bridged_levels": [
+        7
+      ],
+      "rows": [
+        {
+          "level_m": 7,
+          "required": true,
+          "winding_strictly_zero": true,
+          "winding_source": "winding_certificate.json",
+          "tube_families": [
+            {
+              "family": "point10_layer1_census_B:Z05",
+              "group": "point10_layer1_census_B",
+              "n_arcs": 32,
+              "contiguous_full": true,
+              "min_x128_lower": 0.005479652885050795
+            }
+          ],
+          "tube_n_arcs": 32,
+          "tube_min_x128_lower": 0.005479652885050795,
+          "coverage_complete": true,
+          "bridged": true
+        }
+      ],
+      "disk_bridged": true
+    },
+    {
+      "label": "Z17",
+      "levels": [
+        7
+      ],
+      "required_levels": [
+        7
+      ],
+      "bridged_levels": [
+        7
+      ],
+      "rows": [
+        {
+          "level_m": 7,
+          "required": true,
+          "winding_strictly_zero": true,
+          "winding_source": "winding_certificate.json",
+          "tube_families": [
+            {
+              "family": "point10_layer1_census_B:Z17",
+              "group": "point10_layer1_census_B",
+              "n_arcs": 32,
+              "contiguous_full": true,
+              "min_x128_lower": 0.007027010070906577
+            }
+          ],
+          "tube_n_arcs": 32,
+          "tube_min_x128_lower": 0.007027010070906577,
+          "coverage_complete": true,
+          "bridged": true
+        }
+      ],
+      "disk_bridged": true
+    },
+    {
+      "label": "Z19",
+      "levels": [
+        7
+      ],
+      "required_levels": [
+        7
+      ],
+      "bridged_levels": [
+        7
+      ],
+      "rows": [
+        {
+          "level_m": 7,
+          "required": true,
+          "winding_strictly_zero": true,
+          "winding_source": "winding_certificate.json",
+          "tube_families": [
+            {
+              "family": "point10_layer1_census_B:Z19",
+              "group": "point10_layer1_census_B",
+              "n_arcs": 32,
+              "contiguous_full": true,
+              "min_x128_lower": 0.005208756608720873
+            }
+          ],
+          "tube_n_arcs": 32,
+          "tube_min_x128_lower": 0.005208756608720873,
+          "coverage_complete": true,
+          "bridged": true
+        }
+      ],
+      "disk_bridged": true
+    },
+    {
+      "label": "Z38",
+      "levels": [
+        7
+      ],
+      "required_levels": [
+        7
+      ],
+      "bridged_levels": [
+        7
+      ],
+      "rows": [
+        {
+          "level_m": 7,
+          "required": true,
+          "winding_strictly_zero": true,
+          "winding_source": "winding_certificate.json",
+          "tube_families": [
+            {
+              "family": "point10_layer1_census_A:Z38",
+              "group": "point10_layer1_census_A",
+              "n_arcs": 32,
+              "contiguous_full": true,
+              "min_x128_lower": 0.005665167873681391
+            }
+          ],
+          "tube_n_arcs": 32,
+          "tube_min_x128_lower": 0.005665167873681391,
+          "coverage_complete": true,
+          "bridged": true
+        }
+      ],
+      "disk_bridged": true
+    },
+    {
+      "label": "Z39",
+      "levels": [
+        7
+      ],
+      "required_levels": [
+        7
+      ],
+      "bridged_levels": [
+        7
+      ],
+      "rows": [
+        {
+          "level_m": 7,
+          "required": true,
+          "winding_strictly_zero": true,
+          "winding_source": "winding_certificate.json",
+          "tube_families": [
+            {
+              "family": "point10_layer1_census_A:Z39",
+              "group": "point10_layer1_census_A",
+              "n_arcs": 32,
+              "contiguous_full": true,
+              "min_x128_lower": 0.0064176406984331235
+            }
+          ],
+          "tube_n_arcs": 32,
+          "tube_min_x128_lower": 0.0064176406984331235,
+          "coverage_complete": true,
+          "bridged": true
+        }
+      ],
+      "disk_bridged": true
+    },
+    {
+      "label": "Z40",
+      "levels": [
+        7
+      ],
+      "required_levels": [
+        7
+      ],
+      "bridged_levels": [
+        7
+      ],
+      "rows": [
+        {
+          "level_m": 7,
+          "required": true,
+          "winding_strictly_zero": true,
+          "winding_source": "winding_certificate.json",
+          "tube_families": [
+            {
+              "family": "point10_layer1_census_A:Z40",
+              "group": "point10_layer1_census_A",
+              "n_arcs": 32,
+              "contiguous_full": true,
+              "min_x128_lower": 0.007367360922980194
+            }
+          ],
+          "tube_n_arcs": 32,
+          "tube_min_x128_lower": 0.007367360922980194,
+          "coverage_complete": true,
+          "bridged": true
+        }
+      ],
+      "disk_bridged": true
+    },
+    {
+      "label": "Z57",
+      "levels": [
+        7,
+        8
+      ],
+      "required_levels": [
+        7,
+        8
+      ],
+      "bridged_levels": [
+        7,
+        8
+      ],
+      "rows": [
+        {
+          "level_m": 7,
+          "required": true,
+          "winding_strictly_zero": true,
+          "winding_source": "winding_certificate.json",
+          "tube_families": [
+            {
+              "family": "point10_layer1_census_B:Z57",
+              "group": "point10_layer1_census_B",
+              "n_arcs": 32,
+              "contiguous_full": true,
+              "min_x128_lower": 0.007701175626541887
+            },
+            {
+              "family": "point14_m8_base:Z57_L7",
+              "group": "point14_m8_base",
+              "n_arcs": 64,
+              "contiguous_full": true,
+              "min_x128_lower": 0.0077053142594250695
+            }
+          ],
+          "tube_n_arcs": 96,
+          "tube_min_x128_lower": 0.007701175626541887,
+          "coverage_complete": true,
+          "bridged": true
+        },
+        {
+          "level_m": 8,
+          "required": true,
+          "winding_strictly_zero": true,
+          "winding_source": "bridge_certificate.py (new, m=8)",
+          "tube_families": [
+            {
+              "family": "point14_m8_base:Z57_L8",
+              "group": "point14_m8_base",
+              "n_arcs": 64,
+              "contiguous_full": true,
+              "min_x128_lower": 0.003078655064884823
+            }
+          ],
+          "tube_n_arcs": 64,
+          "tube_min_x128_lower": 0.003078655064884823,
+          "coverage_complete": true,
+          "bridged": true
+        }
+      ],
+      "disk_bridged": true
+    },
+    {
+      "label": "Z59",
+      "levels": [
+        7
+      ],
+      "required_levels": [
+        7
+      ],
+      "bridged_levels": [
+        7
+      ],
+      "rows": [
+        {
+          "level_m": 7,
+          "required": true,
+          "winding_strictly_zero": true,
+          "winding_source": "winding_certificate.json",
+          "tube_families": [
+            {
+              "family": "point10_layer1_census_B:Z59",
+              "group": "point10_layer1_census_B",
+              "n_arcs": 32,
+              "contiguous_full": true,
+              "min_x128_lower": 0.006555279683335787
+            }
+          ],
+          "tube_n_arcs": 32,
+          "tube_min_x128_lower": 0.006555279683335787,
+          "coverage_complete": true,
+          "bridged": true
+        }
+      ],
+      "disk_bridged": true
+    },
+    {
+      "label": "Z60",
+      "levels": [
+        7,
+        8
+      ],
+      "required_levels": [
+        7,
+        8
+      ],
+      "bridged_levels": [
+        7,
+        8
+      ],
+      "rows": [
+        {
+          "level_m": 7,
+          "required": true,
+          "winding_strictly_zero": true,
+          "winding_source": "winding_certificate.json",
+          "tube_families": [
+            {
+              "family": "point10_layer1_census_A:Z60",
+              "group": "point10_layer1_census_A",
+              "n_arcs": 32,
+              "contiguous_full": true,
+              "min_x128_lower": 0.007447990146603112
+            },
+            {
+              "family": "point14_m8_base:Z60_L7",
+              "group": "point14_m8_base",
+              "n_arcs": 64,
+              "contiguous_full": true,
+              "min_x128_lower": 0.007452100294246652
+            }
+          ],
+          "tube_n_arcs": 96,
+          "tube_min_x128_lower": 0.007447990146603112,
+          "coverage_complete": true,
+          "bridged": true
+        },
+        {
+          "level_m": 8,
+          "required": true,
+          "winding_strictly_zero": true,
+          "winding_source": "bridge_certificate.py (new, m=8)",
+          "tube_families": [
+            {
+              "family": "point14_m8_base:Z60_L8",
+              "group": "point14_m8_base",
+              "n_arcs": 64,
+              "contiguous_full": true,
+              "min_x128_lower": 0.002977478026387457
+            }
+          ],
+          "tube_n_arcs": 64,
+          "tube_min_x128_lower": 0.002977478026387457,
+          "coverage_complete": true,
+          "bridged": true
+        }
+      ],
+      "disk_bridged": true
+    },
+    {
+      "label": "Z63",
+      "levels": [
+        7
+      ],
+      "required_levels": [
+        7
+      ],
+      "bridged_levels": [
+        7
+      ],
+      "rows": [
+        {
+          "level_m": 7,
+          "required": true,
+          "winding_strictly_zero": true,
+          "winding_source": "winding_certificate.json",
+          "tube_families": [
+            {
+              "family": "point10_layer1_census_A:Z63",
+              "group": "point10_layer1_census_A",
+              "n_arcs": 32,
+              "contiguous_full": true,
+              "min_x128_lower": 0.006704130297006422
+            }
+          ],
+          "tube_n_arcs": 32,
+          "tube_min_x128_lower": 0.006704130297006422,
+          "coverage_complete": true,
+          "bridged": true
+        }
+      ],
+      "disk_bridged": true
+    },
+    {
+      "label": "Z64",
+      "levels": [
+        7
+      ],
+      "required_levels": [
+        7
+      ],
+      "bridged_levels": [
+        7
+      ],
+      "rows": [
+        {
+          "level_m": 7,
+          "required": true,
+          "winding_strictly_zero": true,
+          "winding_source": "winding_certificate.json",
+          "tube_families": [
+            {
+              "family": "point10_layer1_census_B:Z64",
+              "group": "point10_layer1_census_B",
+              "n_arcs": 32,
+              "contiguous_full": true,
+              "min_x128_lower": 0.0072823380913807035
+            }
+          ],
+          "tube_n_arcs": 32,
+          "tube_min_x128_lower": 0.0072823380913807035,
+          "coverage_complete": true,
+          "bridged": true
+        }
+      ],
+      "disk_bridged": true
+    },
+    {
+      "label": "Z65",
+      "levels": [
+        7
+      ],
+      "required_levels": [
+        7
+      ],
+      "bridged_levels": [
+        7
+      ],
+      "rows": [
+        {
+          "level_m": 7,
+          "required": true,
+          "winding_strictly_zero": true,
+          "winding_source": "winding_certificate.json",
+          "tube_families": [
+            {
+              "family": "point10_layer1_census_A:Z65",
+              "group": "point10_layer1_census_A",
+              "n_arcs": 32,
+              "contiguous_full": true,
+              "min_x128_lower": 0.007387771952898921
+            }
+          ],
+          "tube_n_arcs": 32,
+          "tube_min_x128_lower": 0.007387771952898921,
+          "coverage_complete": true,
+          "bridged": true
+        }
+      ],
+      "disk_bridged": true
+    },
+    {
+      "label": "Z66",
+      "levels": [
+        7
+      ],
+      "required_levels": [
+        7
+      ],
+      "bridged_levels": [
+        7
+      ],
+      "rows": [
+        {
+          "level_m": 7,
+          "required": true,
+          "winding_strictly_zero": true,
+          "winding_source": "winding_certificate.json",
+          "tube_families": [
+            {
+              "family": "point10_layer1_census_A:Z66",
+              "group": "point10_layer1_census_A",
+              "n_arcs": 32,
+              "contiguous_full": true,
+              "min_x128_lower": 0.007476897092282135
+            }
+          ],
+          "tube_n_arcs": 32,
+          "tube_min_x128_lower": 0.007476897092282135,
+          "coverage_complete": true,
+          "bridged": true
+        }
+      ],
+      "disk_bridged": true
+    },
+    {
+      "label": "Z67",
+      "levels": [
+        7
+      ],
+      "required_levels": [
+        7
+      ],
+      "bridged_levels": [
+        7
+      ],
+      "rows": [
+        {
+          "level_m": 7,
+          "required": true,
+          "winding_strictly_zero": true,
+          "winding_source": "winding_certificate.json",
+          "tube_families": [
+            {
+              "family": "point10_layer1_census_A:Z67",
+              "group": "point10_layer1_census_A",
+              "n_arcs": 32,
+              "contiguous_full": true,
+              "min_x128_lower": 0.007030573463338493
+            }
+          ],
+          "tube_n_arcs": 32,
+          "tube_min_x128_lower": 0.007030573463338493,
+          "coverage_complete": true,
+          "bridged": true
+        }
+      ],
+      "disk_bridged": true
+    },
+    {
+      "label": "Z68",
+      "levels": [
+        7
+      ],
+      "required_levels": [
+        7
+      ],
+      "bridged_levels": [
+        7
+      ],
+      "rows": [
+        {
+          "level_m": 7,
+          "required": true,
+          "winding_strictly_zero": true,
+          "winding_source": "winding_certificate.json",
+          "tube_families": [
+            {
+              "family": "point10_layer1_census_B:Z68",
+              "group": "point10_layer1_census_B",
+              "n_arcs": 32,
+              "contiguous_full": true,
+              "min_x128_lower": 0.0073890841897100955
+            }
+          ],
+          "tube_n_arcs": 32,
+          "tube_min_x128_lower": 0.0073890841897100955,
+          "coverage_complete": true,
+          "bridged": true
+        }
+      ],
+      "disk_bridged": true
+    },
+    {
+      "label": "Z69",
+      "levels": [
+        7
+      ],
+      "required_levels": [
+        7
+      ],
+      "bridged_levels": [
+        7
+      ],
+      "rows": [
+        {
+          "level_m": 7,
+          "required": true,
+          "winding_strictly_zero": true,
+          "winding_source": "winding_certificate.json",
+          "tube_families": [
+            {
+              "family": "point10_layer1_census_B:Z69",
+              "group": "point10_layer1_census_B",
+              "n_arcs": 32,
+              "contiguous_full": true,
+              "min_x128_lower": 0.007599421807241166
+            }
+          ],
+          "tube_n_arcs": 32,
+          "tube_min_x128_lower": 0.007599421807241166,
+          "coverage_complete": true,
+          "bridged": true
+        }
+      ],
+      "disk_bridged": true
+    },
+    {
+      "label": "Z70",
+      "levels": [
+        7
+      ],
+      "required_levels": [
+        7
+      ],
+      "bridged_levels": [
+        7
+      ],
+      "rows": [
+        {
+          "level_m": 7,
+          "required": true,
+          "winding_strictly_zero": true,
+          "winding_source": "winding_certificate.json",
+          "tube_families": [
+            {
+              "family": "point10_layer1_census_A:Z70",
+              "group": "point10_layer1_census_A",
+              "n_arcs": 32,
+              "contiguous_full": true,
+              "min_x128_lower": 0.00770332770360049
+            }
+          ],
+          "tube_n_arcs": 32,
+          "tube_min_x128_lower": 0.00770332770360049,
+          "coverage_complete": true,
+          "bridged": true
+        }
+      ],
+      "disk_bridged": true
+    },
+    {
+      "label": "Z71",
+      "levels": [
+        7
+      ],
+      "required_levels": [
+        7
+      ],
+      "bridged_levels": [
+        7
+      ],
+      "rows": [
+        {
+          "level_m": 7,
+          "required": true,
+          "winding_strictly_zero": true,
+          "winding_source": "winding_certificate.json",
+          "tube_families": [
+            {
+              "family": "point10_layer1_census_A:Z71",
+              "group": "point10_layer1_census_A",
+              "n_arcs": 32,
+              "contiguous_full": true,
+              "min_x128_lower": 0.005713174971657073
+            }
+          ],
+          "tube_n_arcs": 32,
+          "tube_min_x128_lower": 0.005713174971657073,
+          "coverage_complete": true,
+          "bridged": true
+        }
+      ],
+      "disk_bridged": true
+    },
+    {
+      "label": "Z72",
+      "levels": [
+        7,
+        8
+      ],
+      "required_levels": [
+        7,
+        8
+      ],
+      "bridged_levels": [
+        7,
+        8
+      ],
+      "rows": [
+        {
+          "level_m": 7,
+          "required": true,
+          "winding_strictly_zero": true,
+          "winding_source": "bridge_certificate.py (new, m=7)",
+          "tube_families": [
+            {
+              "family": "point17_z72_geometry:Z72_shifted",
+              "group": "point17_z72_geometry",
+              "n_arcs": 64,
+              "contiguous_full": true,
+              "min_x128_lower": 0.005919688622885641
+            }
+          ],
+          "tube_n_arcs": 64,
+          "tube_min_x128_lower": 0.005919688622885641,
+          "coverage_complete": true,
+          "bridged": true
+        },
+        {
+          "level_m": 8,
+          "required": true,
+          "winding_strictly_zero": true,
+          "winding_source": "winding_certificate.json",
+          "tube_families": [
+            {
+              "family": "point17_z72_geometry:Z72_shifted_L8",
+              "group": "point17_z72_geometry",
+              "n_arcs": 64,
+              "contiguous_full": true,
+              "min_x128_lower": 0.00236515716683082
+            }
+          ],
+          "tube_n_arcs": 64,
+          "tube_min_x128_lower": 0.00236515716683082,
+          "coverage_complete": true,
+          "bridged": true
+        }
+      ],
+      "disk_bridged": true
+    },
+    {
+      "label": "Z73",
+      "levels": [
+        7
+      ],
+      "required_levels": [
+        7
+      ],
+      "bridged_levels": [
+        7
+      ],
+      "rows": [
+        {
+          "level_m": 7,
+          "required": true,
+          "winding_strictly_zero": true,
+          "winding_source": "winding_certificate.json",
+          "tube_families": [
+            {
+              "family": "point10_layer1_census_B:Z73",
+              "group": "point10_layer1_census_B",
+              "n_arcs": 32,
+              "contiguous_full": true,
+              "min_x128_lower": 0.005828069032576447
+            }
+          ],
+          "tube_n_arcs": 32,
+          "tube_min_x128_lower": 0.005828069032576447,
+          "coverage_complete": true,
+          "bridged": true
+        }
+      ],
+      "disk_bridged": true
+    },
+    {
+      "label": "Z74",
+      "levels": [
+        7
+      ],
+      "required_levels": [
+        7
+      ],
+      "bridged_levels": [
+        7
+      ],
+      "rows": [
+        {
+          "level_m": 7,
+          "required": true,
+          "winding_strictly_zero": true,
+          "winding_source": "winding_certificate.json",
+          "tube_families": [
+            {
+              "family": "point10_layer1_census_A:Z74",
+              "group": "point10_layer1_census_A",
+              "n_arcs": 32,
+              "contiguous_full": true,
+              "min_x128_lower": 0.006684324524846682
+            }
+          ],
+          "tube_n_arcs": 32,
+          "tube_min_x128_lower": 0.006684324524846682,
+          "coverage_complete": true,
+          "bridged": true
+        }
+      ],
+      "disk_bridged": true
+    }
+  ],
+  "geometry_checks_new_m8": [
+    {
+      "label": "Z57",
+      "level_m": 8,
+      "match_point14": true
+    },
+    {
+      "label": "Z60",
+      "level_m": 8,
+      "match_point14": true
+    }
+  ],
+  "n_disks": 25,
+  "all_disks_bridged": true,
+  "all_pass": true,
+  "n_checks": 1524,
+  "elapsed_total_s": 45.3
+}

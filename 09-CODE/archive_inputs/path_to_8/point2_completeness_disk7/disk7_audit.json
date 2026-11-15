@@ -1,0 +1,51 @@
+{
+  "status": "INDEPENDENT_ASSEMBLY_AND_GEOMETRY_AUDIT_DISK7",
+  "checks": {
+    "H7_main_count_is_2": true,
+    "nested_count_is_1": true,
+    "coarse_negative_control_rejects": true,
+    "refined_cover_pass": true,
+    "stable_tubes_pass": true,
+    "rouche_pass": true,
+    "dependency_H7_hash": true,
+    "dependency_slice_hash": true,
+    "dependency_CL34_hash": true,
+    "dependency_absolute36_hash": true,
+    "same_arc_count": true,
+    "cover_starts_and_ends_exactly": true,
+    "no_gaps_or_overlaps": true,
+    "same_arc_keys": true,
+    "same_H7_lower_bounds": true,
+    "all_exact_arcs_inside_float_disks": true,
+    "all_H7_boundary_disks_nonzero": true,
+    "all_stable_tail_symbols_injected": true,
+    "all_full_CL34_errors_injected": true,
+    "all_orbits_inside_composition_domain": true,
+    "all_rouche_gaps_positive": true,
+    "all_rouche_margins_above_1": true
+  },
+  "arc_count": 114,
+  "certified_H_zero_count_in_open_disk": 2,
+  "domain": "|u|<7",
+  "worst_rouche_margin_lower": "[1.54708575751160120116309557550226088148989118662665903239189861558891727107555673795697562167414548516605482823934153717632411834136103874804367788586062 +/- 4.32e-153]",
+  "smallest_absolute_gap_lower": "[0.0516361133175594746972807235470155352533801083577467647864402058092973623660606572459822538575275783619846795863447758735146168109113554157844447260598644 +/- 2.80e-155]",
+  "minimum_float_geometry_slack_lower": "[4.29471659195986731240247832606324125540986211095469833382132863239187746366579098363113122680741090814657507840934583232136759581468940618310153075098594e-11 +/- 4.13e-165]",
+  "maximum_composition_coordinate_upper": "[0.401130989971797900000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 +/- 5.88e-156]",
+  "artifact_hashes": {
+    "H7": "496047c86ea7f66d32bb30d5fcde0e4251ae83cc614329fc8517883b17ee8a19",
+    "refined": "9802d8362b42757842d4594b4bc55584190708595c80499aa52ec23c92eb49ab",
+    "slices": "615cb750b7873e4d2f82f0dc7c6be9ad2c7222f1419f0db66fdfb14b89087942",
+    "rouche": "e2e3b0810bad5f76a40c71a9119d264e840061e17889f2cb792e5aa845465d7b",
+    "CL34": "07568db34c11e046bb679144c293a66328f8ad9d64b39d35a944406981c124c6",
+    "absolute36": "cf1f88aae5c3665cbb69b2ca574c6390e3f26878db3e78699056edbdba879918"
+  },
+  "source_hashes": {
+    "h7_circle_certificate.py": "f786a867ed83993f1b174a0dd66784914a3285a81c8d3420db6dc6e65f128730",
+    "refine_failed_h7_arcs.py": "411f2f77f21da0172d80d3573afe6402f7c828f688e302f743ad251a5d1e6b75",
+    "pilot_slice.py": "3fc39f110bdd51ea70c95896eb031d3c41f4af73b3be55a5ffbc53b155da24f3",
+    "run_pilot_slices.py": "c08fdcf069c5c631e69c37e133805024a29ab4590ec5ac70dc30d798fcf88f44",
+    "arcwise_rouche_certificate.py": "333298a6f80335e7967355390ee3014548ff015bafdb84cd52d6731e655eb597",
+    "verify_disk7_certificate.py": "60e2656913789728b52735a0f30b76d1f70b4eee00f9abb6912e0b2beaf315e2"
+  },
+  "pass": true
+}

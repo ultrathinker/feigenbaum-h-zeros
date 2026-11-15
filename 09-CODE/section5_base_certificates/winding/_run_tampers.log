@@ -1,0 +1,10 @@
+T1 [щель в покрытии] exit=1 caught=True
+T2 [обмотка (завышена/искажена)] exit=1 caught=True
+T3 [min|x|] exit=1 caught=True
+T4 [sha256] exit=1 caught=True
+T5 [число дуг] exit=1 caught=True
+T6 [знак] exit=1 caught=True
+T7 [верхнеуровневый счётчик (бонус)] exit=1 caught=True
+T8 [n_checks (бонус)] exit=1 caught=True
+
+TAMPER_LOG.md written. caught 8/8 tampers (each must exit 1); clean control exit=0.

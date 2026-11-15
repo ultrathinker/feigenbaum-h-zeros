@@ -1,0 +1,150 @@
+== Независимый верификатор H1-пакета (verify_E) ==
+Архив: <ARCHIVE_ROOT>
+
+## Проверка 1. P_all закрытой формулой (level_tail_certificate.json)
+  [OK] P_ALL пересчитан == P_all_levels_upper
+       got:      2.11342511498706e-7
+       expected: 2.11342511498706e-7
+  [OK] M3_chosen == 1834 (численно)
+       got:      1834.000000
+       expected: 1834
+  [OK] M3_global_upper/pass
+       got:      1833.667147 / True
+       expected: 1833.667 / True
+  [OK] M3 radius == 2e-4 (численно)
+       got:      2.000000e-04
+       expected: 2e-4
+  [OK] Amax(duhamel_ds) < radius M3 (из поля)
+       got:      1.34793e-04
+       expected: < 2.00000e-04
+  [OK] P_ALL(M3=123479) > 3e-7 (негативный контроль)
+       got:      3.5542e-07
+       expected: > 3e-7
+  [OK] P_ALL(M3=1834) <= 3e-7
+       got:      2.1134e-07
+       expected: <= 3e-7
+  => Проверка 1: PASS
+## Проверка 2. Радиусы (radius_K284_certificate.json)
+  [OK] r_s = P_exit + P_perp*D_exit
+       got:      3.5659822966266e-7
+       expected: 3.5659822966266e-7
+  [OK] r_s <= tube_radius
+       got:      3.5660e-07
+       expected: <= 5.4400e-07
+  [OK] headroom = tube_radius - r_s
+       got:      1.87401770e-07
+       expected: 1.87401770e-07
+  [OK] P_exit_ceiling == P_all_levels_upper
+       got:      2.11342600e-07
+       expected: 2.11342511e-07
+  [OK] radius pass == true
+       got:      True
+       expected: True
+  => Проверка 2: PASS
+## Проверка 3. Трубочные сертификаты по 25 дискам
+  [OK] число файлов в 5 группах (все)
+       got:      1542
+       expected: 1542
+       non-NEG (25 дисков): 1465 ; NEG-контролей: 77
+         point10_layer1_census_A                pos=384  NEG= 32
+         point10_layer1_census_B                pos=344  NEG= 13
+         point14_m8_base                        pos=257  NEG=  0
+         point17_z72_geometry                   pos=384  NEG=  0
+         point3B_localize_two_roots_agent_fix1  pos= 96  NEG= 32
+  [OK] Rmax_upper < 1 у всех 25 дисков (non-NEG==1465, NEG==77)
+       got:      1465 файлов, NEG=77
+       expected: 1465 / 77
+  [OK] max Rmax (25 дисков)
+       got:      0.8850 (cert_slice_Z72_outerbox_tube_K100_P732a6.json)
+       expected: ~0.885 (Z72 ... P732a6)
+  [NOTE] min x128_lower (25 дисков) = 1.1186e-03 (cert_slice_D_MINUS_outerbox_tube_K100_P748a23.json)
+         ожидание из спецификации ~5.6e-3 — РАЗЛИЧАЕТСЯ (см. REPORT_E). Все x128_lower > 0 пройдено.
+  [OK] x128_lower > 0 у всех 25 дисков
+       got:      1465 файлов
+       expected: 1465
+  [OK] r_s == dom_budget_each у всех 25 дисков
+       got:      0 несовпадений
+       expected: 0
+       NEG-контроли (не входят в 25 дисков):
+         число=77  max Rmax=0.8969 (cert_slice_NEG_B2_outerbox_tube_K100_P78a2.json)
+  [OK] NEG вынесены отдельно, не входят в 25 дисков
+       got:      77
+       expected: >0
+  [NOTE] архивное покрытие *_tube_K100_*.json = 3967 (ожидание из спец. 2426, разница — cert_D пишется параллельно; см. REPORT_E)
+  => Проверка 3: PASS
+## Проверка 4. Спектральный радиус DE
+  [OK] q = L2/delta^4 (первичные из архива)
+       got:      0.427365979391694
+       expected: 0.427365979391694
+  [OK] p = 1/delta^2 (delta из архива)
+       got:      0.045868522071265
+       expected: 0.045868522071265
+  [OK] max(q,p) < 1
+       got:      0.427366
+       expected: < 1 (q ~ 0.427)
+  => Проверка 4: PASS
+## Проверка 5. A1 — голоморфность оператора (a1_certificate.json)
+  [OK] A1 главный домен: радиус/pass
+       got:      0.00250 / True
+       expected: 0.0025 / True
+  [OK] негативный контроль радиус 0.01
+       got:      pass=True
+       expected: pass=True
+  [OK] негативный контроль радиус 0.05
+       got:      pass=False
+       expected: pass=False
+  => Проверка 5: PASS
+## Проверка 6. Тождество ренормализации H_m = (T^m f_{s_m})(1)
+       u=(+0.000,+0.000) m=4  |diff|=9.681e-122
+       u=(+0.000,+0.000) m=5  |diff|=0.000e+00
+       u=(+0.000,+0.000) m=6  |diff|=0.000e+00
+       u=(+0.000,+0.000) m=7  |diff|=4.841e-122
+       u=(+1.000,+0.000) m=4  |diff|=2.291e-31
+       u=(+1.000,+0.000) m=5  |diff|=3.072e-31
+       u=(+1.000,+0.000) m=6  |diff|=4.122e-31
+       u=(+1.000,+0.000) m=7  |diff|=5.530e-31
+       u=(+3.000,+2.000) m=4  |diff|=1.205e-30
+       u=(+3.000,+2.000) m=5  |diff|=1.616e-30
+       u=(+3.000,+2.000) m=6  |diff|=2.168e-30
+       u=(+3.000,+2.000) m=7  |diff|=2.908e-30
+       u=(-1.000,+0.000) m=4  |diff|=3.235e-31
+       u=(-1.000,+0.000) m=5  |diff|=4.342e-31
+       u=(-1.000,+0.000) m=6  |diff|=5.826e-31
+       u=(-1.000,+0.000) m=7  |diff|=7.816e-31
+       u=(+7.244,+6.188) m=4  |diff|=5.265e-28
+       u=(+7.244,+6.188) m=5  |diff|=7.036e-28
+       u=(+7.244,+6.188) m=6  |diff|=9.433e-28
+       u=(+7.244,+6.188) m=7  |diff|=1.265e-27
+  [OK] max невязка |H_direct - H_renorm|
+       got:      1.265e-27 @(7.24399319091292, 6.18809344211899, 7)
+       expected: <= ~1e-27..1e-31
+  => Проверка 6: PASS
+## Проверка 7. Пины входов (sha256)
+       w36/audit_codex/level_tail_certificate.py
+         1c2bf9d17ce14e5c041f504ff3cb60a1fab831d7ff8577a8fc9cd5aef08869c7
+       w36/audit_codex/level_tail_certificate.json
+         de55023344ecc8cc9172dde2a19af3b026c0c1e354b0a417068a3bfcaf83d257
+       w36/audit_codex/m3_global_certificate.json
+         ede2cd8ba896da7a79a9c4d1dccccf72e58c5d8a701d06b01a9da8fde7cdb3ce
+       w36/audit_codex/k_global_certificate.json
+         5306e9f8f649e6d73a28745546a51ef13517f11561138879548e82ae7b63b0fe
+       w36/audit_codex/radius_K284_certificate.json
+         f43947691493ebb60ee03e06fb7deb0a34a71df252352c9c94ef04f91b9d727d
+       path_to_8/point1_A1/a1_certificate.json
+         94c7657ac6ab03d48b9292c22e2a1168396c88efe0bad70726e4ea2172907138
+       w36/audit_codex/cert_slice_param_audit.py
+         950ba8a078ca6ecac1b5aab242d4347bcd6d0784e1c48b2c498344055f4c4694
+       w33/t5_cert_sonnet/w33_gh_hiprec.json
+         7d4acc22f96a5ec473afa5b88ba4669e622aef8546c448a471068e5ff29284d8
+  [OK] пины sha256 всех входов
+       got:      8 файлов
+       expected: 8 файлов
+  => Проверка 7: пины напечатаны (сверка с cert_D — после его готовности)
+
+============================================================
+СВОДКА
+  всего проверок: 26
+  прошло:         26
+  упало:          0
+  упавшие блоки:  нет
+============================================================

@@ -1,0 +1,9 @@
+однострочный diff копии верификатора (verify_E -> tamper_F), прогон F2:
+--- verify_E/h1_verify_pkg.py (РЕМОНТНЫЙ, строка 20)
++++ tamper_F/h1_verify_pkg.py (копия под песочницу)
+- ARCH = Path(r"D:/Исследования/И-1 — Нули функции H/Feigenbaum-archive")
++ ARCH = Path(r"D:/Исследования/И-1 — Нули функции H/Feigenbaum-archive/article_v1/v3_work/h1_package/tamper_F/sandbox")
+
+Других правок нет.
+sha256 оригинала (verify_E, READ-ONLY): 7a2f42f545e673220f870599e529f5eb29f1f8182c8b4113bbfc3f77913474e7
+sha256 копии (патченой):                bf999bfc5460d72a1622c1ac47de947d60c3d9c4554d5a875a3652cd2dae00b7

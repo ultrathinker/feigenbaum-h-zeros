@@ -1,0 +1,112 @@
+[17:17:57 +   0.0s] kilo-style FROZEN unified Mandelbrot run start (mp.dps=150, m=10, period=2048)
+[17:17:57 +   0.0s] === STAGE 1: real superstable cascade c_k, k=2..16 (derive c_F) ===
+[17:18:04 +   6.4s]   c_F (own cascade, Richardson@16) = (-1.4011551890920506005238268502643472843821101975214 + 0.0j)
+[17:18:04 +   6.4s]   |c_F - brief literal|            = 5.238e-19
+[17:18:04 +   6.4s] === STAGE 2: calibration L_k=(c_{k+1}-c_F)*delta^k -> A ===
+[17:18:04 +   6.4s]   L = (0.428837498429404068139707339116408629157357 + 0.0j)
+[17:18:04 +   6.4s]   A = (-2.33188562955070413230142737400505175507716 + 0.0j)
+[17:18:04 +   6.4s]   self-consistency u(c_11)[m=10] = (-0.9999999857854956403725155 + 0.0j) (expect -> -1)
+[17:18:04 +   6.4s] === loaded 23 catalog entries from address_certificate.json ===
+[17:18:04 +   6.4s]   generated 20 controls in 22 tries (seed=20260812)
+[17:18:04 +   6.4s] === STAGE 3: catalog cross-check (23 points, m=10) ===
+[17:18:04 +   6.7s]   [catalog] Z01       ACCEPTED tier=1 d_u=2.6027e-05 exact_period=True (1 attempts)
+[17:18:04 +   6.9s]   [catalog] Z02       ACCEPTED tier=1 d_u=2.0327e-05 exact_period=True (1 attempts)
+[17:18:04 +   7.2s]   [catalog] Z05       ACCEPTED tier=1 d_u=2.0265e-05 exact_period=True (1 attempts)
+[17:18:05 +   7.4s]   [catalog] Z17       ACCEPTED tier=1 d_u=3.1355e-05 exact_period=True (1 attempts)
+[17:18:05 +   7.7s]   [catalog] Z19       ACCEPTED tier=1 d_u=2.2624e-05 exact_period=True (1 attempts)
+[17:18:05 +   8.0s]   [catalog] Z38       ACCEPTED tier=1 d_u=2.5878e-05 exact_period=True (1 attempts)
+[17:18:05 +   8.3s]   [catalog] Z39       ACCEPTED tier=1 d_u=2.7104e-05 exact_period=True (1 attempts)
+[17:18:06 +   8.6s]   [catalog] Z40       ACCEPTED tier=1 d_u=3.1238e-05 exact_period=True (1 attempts)
+[17:18:06 +   8.9s]   [catalog] Z57       ACCEPTED tier=1 d_u=3.3578e-05 exact_period=True (1 attempts)
+[17:18:06 +   9.1s]   [catalog] Z59       ACCEPTED tier=1 d_u=2.4561e-05 exact_period=True (1 attempts)
+[17:18:07 +   9.4s]   [catalog] Z60       ACCEPTED tier=1 d_u=3.2474e-05 exact_period=True (1 attempts)
+[17:18:07 +   9.7s]   [catalog] Z63       ACCEPTED tier=1 d_u=2.8060e-05 exact_period=True (1 attempts)
+[17:18:07 +  10.0s]   [catalog] Z64       ACCEPTED tier=1 d_u=3.2331e-05 exact_period=True (1 attempts)
+[17:18:07 +  10.3s]   [catalog] Z65       ACCEPTED tier=1 d_u=3.3290e-05 exact_period=True (1 attempts)
+[17:18:08 +  10.6s]   [catalog] Z66       ACCEPTED tier=1 d_u=3.4705e-05 exact_period=True (1 attempts)
+[17:18:08 +  10.9s]   [catalog] Z67       ACCEPTED tier=1 d_u=3.2148e-05 exact_period=True (1 attempts)
+[17:18:08 +  11.1s]   [catalog] Z68       ACCEPTED tier=1 d_u=3.4550e-05 exact_period=True (1 attempts)
+[17:18:09 +  11.4s]   [catalog] Z69       ACCEPTED tier=1 d_u=3.6015e-05 exact_period=True (1 attempts)
+[17:18:09 +  11.7s]   [catalog] Z70       ACCEPTED tier=1 d_u=3.6874e-05 exact_period=True (1 attempts)
+[17:18:09 +  12.0s]   [catalog] Z71       ACCEPTED tier=1 d_u=2.6410e-05 exact_period=True (1 attempts)
+[17:18:33 +  36.2s]   [catalog] Z72       NOT ACCEPTED (49 attempts, 36 converged-but-rejected)
+[17:18:34 +  36.6s]   [catalog] Z73       ACCEPTED tier=1 d_u=3.1801e-05 exact_period=True (1 attempts)
+[17:18:34 +  36.8s]   [catalog] Z74       ACCEPTED tier=1 d_u=3.7179e-05 exact_period=True (1 attempts)
+[17:18:34 +  36.8s] === STAGE 3b: Z72 provenance -- corrected address (see header) ===
+[17:18:34 +  37.0s]   [catalog_provenance_check] Z72_corrected ACCEPTED tier=1 d_u=0.0000e+00 exact_period=True (1 attempts)
+[17:18:34 +  37.0s] === STAGE 4: 20 deterministic negative controls (seed=20260812) ===
+[17:18:58 +  60.7s]   [control] CTRL01    NOT ACCEPTED (49 attempts, 49 converged-but-rejected)
+[17:19:21 +  84.2s]   [control] CTRL02    NOT ACCEPTED (49 attempts, 48 converged-but-rejected)
+[17:19:31 +  94.3s]   [control] CTRL03    NOT ACCEPTED (49 attempts, 14 converged-but-rejected)
+[17:19:56 + 118.5s]   [control] CTRL04    NOT ACCEPTED (49 attempts, 49 converged-but-rejected)
+[17:20:22 + 145.1s]   [control] CTRL05    NOT ACCEPTED (49 attempts, 45 converged-but-rejected)
+[17:20:49 + 171.9s]   [control] CTRL06    NOT ACCEPTED (49 attempts, 49 converged-but-rejected)
+[17:21:10 + 192.5s]   [control] CTRL07    NOT ACCEPTED (49 attempts, 49 converged-but-rejected)
+[17:21:30 + 212.4s]   [control] CTRL08    NOT ACCEPTED (49 attempts, 46 converged-but-rejected)
+[17:21:50 + 232.5s]   [control] CTRL09    NOT ACCEPTED (49 attempts, 48 converged-but-rejected)
+[17:22:18 + 261.0s]   [control] CTRL10    NOT ACCEPTED (49 attempts, 45 converged-but-rejected)
+[17:23:23 + 325.8s]   [control] CTRL11    NOT ACCEPTED (49 attempts, 49 converged-but-rejected)
+[17:24:22 + 385.0s]   [control] CTRL12    NOT ACCEPTED (49 attempts, 49 converged-but-rejected)
+[17:24:54 + 416.4s]   [control] CTRL13    NOT ACCEPTED (49 attempts, 47 converged-but-rejected)
+[17:25:22 + 444.5s]   [control] CTRL14    NOT ACCEPTED (49 attempts, 49 converged-but-rejected)
+[17:25:43 + 465.9s]   [control] CTRL15    NOT ACCEPTED (49 attempts, 49 converged-but-rejected)
+[17:26:07 + 490.3s]   [control] CTRL16    NOT ACCEPTED (49 attempts, 43 converged-but-rejected)
+[17:26:33 + 515.8s]   [control] CTRL17    NOT ACCEPTED (49 attempts, 49 converged-but-rejected)
+[17:26:53 + 535.8s]   [control] CTRL18    NOT ACCEPTED (49 attempts, 49 converged-but-rejected)
+[17:27:24 + 566.4s]   [control] CTRL19    NOT ACCEPTED (49 attempts, 49 converged-but-rejected)
+[17:27:53 + 595.7s]   [control] CTRL20    NOT ACCEPTED (49 attempts, 49 converged-but-rejected)
+[17:27:53 + 595.7s] === STAGE 5: local root-density spot-check (catalog only, 12x12 grid) ===
+[17:28:58 + 660.8s]   density Z01   : roots= 1 nearest=2.603e-05 acc_med=1.725e-01 d_u=2.603e-05 spec=6627.3x (65.1s)
+[17:29:53 + 715.9s]   density Z02   : roots= 1 nearest=2.033e-05 acc_med=1.725e-01 d_u=2.033e-05 spec=8485.5x (55.1s)
+[17:31:24 + 807.0s]   density Z05   : roots= 9 nearest=2.027e-05 acc_med=1.537e-01 d_u=2.027e-05 spec=7586.3x (91.0s)
+[17:32:23 + 865.6s]   density Z17   : roots=12 nearest=3.135e-05 acc_med=1.060e-01 d_u=3.135e-05 spec=3380.6x (58.4s)
+[17:33:17 + 919.7s]   density Z19   : roots= 1 nearest=2.262e-05 acc_med=1.725e-01 d_u=2.262e-05 spec=7624.2x (54.1s)
+[17:34:37 + 999.4s]   density Z38   : roots=19 nearest=2.588e-05 acc_med=1.141e-01 d_u=2.588e-05 spec=4407.8x (79.4s)
+[17:35:39 +1061.6s]   density Z39   : roots= 2 nearest=2.710e-05 acc_med=1.725e-01 d_u=2.710e-05 spec=6364.2x (62.2s)
+[17:36:35 +1118.1s]   density Z40   : roots= 1 nearest=3.124e-05 acc_med=1.725e-01 d_u=3.124e-05 spec=5522.2x (56.4s)
+[17:37:57 +1199.8s]   density Z57   : roots=25 nearest=3.358e-05 acc_med=9.538e-02 d_u=3.358e-05 spec=2840.7x (81.5s)
+[17:39:00 +1263.3s]   density Z59   : roots=12 nearest=2.456e-05 acc_med=1.475e-01 d_u=2.456e-05 spec=6005.5x (63.4s)
+[17:40:20 +1342.9s]   density Z60   : roots=20 nearest=3.247e-05 acc_med=1.202e-01 d_u=3.247e-05 spec=3701.8x (79.3s)
+[17:41:21 +1403.7s]   density Z63   : roots= 1 nearest=2.806e-05 acc_med=1.725e-01 d_u=2.806e-05 spec=6147.2x (60.9s)
+[17:42:27 +1470.2s]   density Z64   : roots=12 nearest=3.233e-05 acc_med=1.060e-01 d_u=3.233e-05 spec=3278.4x (66.3s)
+[17:43:28 +1531.2s]   density Z65   : roots=20 nearest=3.329e-05 acc_med=5.325e-02 d_u=3.329e-05 spec=1599.7x (60.7s)
+[17:44:45 +1607.7s]   density Z66   : roots=29 nearest=3.471e-05 acc_med=6.184e-02 d_u=3.471e-05 spec=1781.7x (76.1s)
+[17:45:43 +1665.5s]   density Z67   : roots=19 nearest=3.215e-05 acc_med=5.034e-02 d_u=3.215e-05 spec=1565.8x (57.6s)
+[17:46:56 +1738.6s]   density Z68   : roots=31 nearest=3.455e-05 acc_med=6.306e-02 d_u=3.455e-05 spec=1825.2x (72.7s)
+[17:48:01 +1803.5s]   density Z69   : roots=21 nearest=3.602e-05 acc_med=4.983e-02 d_u=3.602e-05 spec=1383.5x (64.6s)
+[17:49:07 +1870.4s]   density Z70   : roots=42 nearest=3.687e-05 acc_med=3.636e-02 d_u=3.687e-05 spec=986.1x (66.3s)
+[17:50:31 +1953.9s]   density Z71   : roots=25 nearest=2.641e-05 acc_med=9.554e-02 d_u=2.641e-05 spec=3617.5x (83.2s)
+[17:51:37 +2020.3s]   density Z72   : roots=31 nearest=5.998e-02 acc_med=6.888e-02 d_u=n/a spec=n/a (66.0s)
+[17:52:56 +2098.8s]   density Z73   : roots=14 nearest=3.180e-05 acc_med=1.285e-01 d_u=3.180e-05 spec=4042.2x (78.3s)
+[17:54:13 +2175.9s]   density Z74   : roots=10 nearest=3.718e-05 acc_med=1.385e-01 d_u=3.718e-05 spec=3724.9x (76.9s)
+[17:54:13 +2175.9s] === STAGE 6: drift-law vector check (catalog, item 5) ===
+[17:54:13 +2175.9s]   drift Z01   : |R|/|Delta|=0.9638 phase_diff=-0.030 deg
+[17:54:13 +2175.9s]   drift Z02   : |R|/|Delta|=0.9557 phase_diff=0.128 deg
+[17:54:13 +2175.9s]   drift Z05   : |R|/|Delta|=0.9042 phase_diff=1.422 deg
+[17:54:13 +2175.9s]   drift Z17   : |R|/|Delta|=0.9546 phase_diff=-0.786 deg
+[17:54:13 +2175.9s]   drift Z19   : |R|/|Delta|=0.9394 phase_diff=-1.040 deg
+[17:54:13 +2175.9s]   drift Z38   : |R|/|Delta|=0.9757 phase_diff=-0.590 deg
+[17:54:13 +2175.9s]   drift Z39   : |R|/|Delta|=0.9631 phase_diff=0.217 deg
+[17:54:13 +2175.9s]   drift Z40   : |R|/|Delta|=0.9682 phase_diff=0.282 deg
+[17:54:13 +2175.9s]   drift Z57   : |R|/|Delta|=0.9496 phase_diff=0.895 deg
+[17:54:13 +2175.9s]   drift Z59   : |R|/|Delta|=0.9246 phase_diff=1.074 deg
+[17:54:13 +2175.9s]   drift Z60   : |R|/|Delta|=0.9746 phase_diff=-0.222 deg
+[17:54:13 +2175.9s]   drift Z63   : |R|/|Delta|=0.9602 phase_diff=-0.126 deg
+[17:54:13 +2175.9s]   drift Z64   : |R|/|Delta|=0.9567 phase_diff=-0.318 deg
+[17:54:13 +2175.9s]   drift Z65   : |R|/|Delta|=0.9652 phase_diff=-0.387 deg
+[17:54:13 +2175.9s]   drift Z66   : |R|/|Delta|=0.9686 phase_diff=-0.262 deg
+[17:54:13 +2175.9s]   drift Z67   : |R|/|Delta|=0.9701 phase_diff=0.093 deg
+[17:54:13 +2175.9s]   drift Z68   : |R|/|Delta|=0.9730 phase_diff=-0.603 deg
+[17:54:13 +2175.9s]   drift Z69   : |R|/|Delta|=0.9712 phase_diff=-0.934 deg
+[17:54:13 +2175.9s]   drift Z70   : |R|/|Delta|=0.9712 phase_diff=-0.292 deg
+[17:54:13 +2175.9s]   drift Z71   : |R|/|Delta|=0.9503 phase_diff=-0.563 deg
+[17:54:13 +2175.9s]   drift Z73   : |R|/|Delta|=0.9975 phase_diff=0.601 deg
+[17:54:13 +2175.9s]   drift Z74   : |R|/|Delta|=0.9631 phase_diff=-0.004 deg
+[17:54:13 +2175.9s] === STAGE 7: pool-based specificity (median dist to OTHER found roots) ===
+[17:54:13 +2175.9s] === VERDICT ===
+[17:54:13 +2175.9s]   catalog accepted-match: 22/23  (rejected: ['Z72'])
+[17:54:13 +2175.9s]   catalog median d_u = 3.157819135948192e-05   control median d_u = None
+[17:54:13 +2175.9s]   median pool specificity (catalog) = 82338.9577141302
+[17:54:13 +2175.9s]   median |drift ratio| = 0.9634639222115631   median |phase diff| deg = 0.35250144940640105
+[17:54:13 +2175.9s]   total wall time = 2175.9 sec
+[17:54:13 +2175.9s] wrote <ARCHIVE_ROOT>\article_v1\v2_work\unified_mandelbrot\results.json

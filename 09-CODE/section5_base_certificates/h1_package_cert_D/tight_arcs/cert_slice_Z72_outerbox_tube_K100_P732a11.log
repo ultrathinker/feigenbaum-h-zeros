@@ -1,0 +1,26 @@
+[17:20:47 +     0.0s] === MODE=tube K_DOM=100 S=102 tail_symbol=True tooth=P7 arc=11/32 precision=512 ===
+[17:20:47 +     0.0s] l(h) head-sum check: [1.000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 +/- 3.61e-152]  (must be 1 within tiny radius)
+[17:20:47 +     0.0s] max_{k<100}|h_k| = 2.407730e+00
+[17:20:47 +     0.0s] arc geometry: u_mid=(4.728210671583636+7.254908045336274j), rho=0.00981353487529715, c=(424123569.6141355-343255854.5823589j)
+[17:20:47 +     0.0s] named modes (top 100 by base response): [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]...
+[17:20:47 +     0.0s] OUTER BOX enabled: every named coordinate receives full l1 budget r_s=3.566000e-07; box l1 envelope=3.566000e-05
+[17:20:47 +     0.0s]   ||b_0||_1 (head part) <= 7.995046e+00  ->  |c_0|<=4.460262e-08
+[17:20:47 +     0.0s]   ||b_1||_1 (head part) <= 4.329912e+00  ->  |c_1|<=8.235733e-08
+[17:20:47 +     0.0s]   ||b_2||_1 (head part) <= 1.514528e+00  ->  |c_2|<=2.354530e-07
+[17:20:47 +     0.0s]   ||b_3||_1 (head part) <= 1.891078e+00  ->  |c_3|<=1.885697e-07
+[17:20:47 +     0.0s]   ||b_4||_1 (head part) <= 1.370463e+00  ->  |c_4|<=2.602040e-07
+[17:20:47 +     0.0s]   ||b_95||_1 (head part) <= 1.000000e+00  ->  |c_95|<=3.566000e-07
+[17:20:47 +     0.0s]   ||b_96||_1 (head part) <= 1.000000e+00  ->  |c_96|<=3.566000e-07
+[17:20:47 +     0.0s]   ||b_97||_1 (head part) <= 1.000000e+00  ->  |c_97|<=3.566000e-07
+[17:20:47 +     0.0s]   ||b_98||_1 (head part) <= 1.000000e+00  ->  |c_98|<=3.566000e-07
+[17:20:47 +     0.0s]   ||b_99||_1 (head part) <= 1.000000e+00  ->  |c_99|<=3.566000e-07
+[17:20:47 +     0.0s] weights: W_dom_total=3.562434e-07 (budget 3.566000e-07 x100), W_head_rest=4.940656e-324, W_tail=3.566000e-07 (injected named symbol)
+[17:20:47 +     0.0s] outer-cover check: each head coordinate and the aggregate l1 tail receive the full r_s; no inner-simplex weight sum is used
+[17:20:47 +     0.0s] actual |c_j| bounds used (dominant, first 5): ['4.4603e-08', '8.2357e-08', '2.3545e-07', '1.8857e-07', '2.6020e-07']
+[17:21:28 +    40.3s] tube arc computed in 40.30s
+[17:21:28 +    40.3s] N_s_tube <= 8.024275820577e+09   (base 7.981268349448e+09)
+[17:21:28 +    40.3s] phih_tube(U proxy) <= 7.808176208068e+09   (base 7.769254246752e+09)
+[17:21:28 +    40.3s] tube head_argmax = 0  (base head_argmax = 0)
+[17:21:28 +    40.3s] kappa_Ns = 5.388551e-03   kappa_U = 5.009742e-03   kappa_D = 5.388551e-03
+[17:21:28 +    40.3s] k_star=0: eps-linear l1 <= 3.679128e+04; AF remainder r: base=7.161655e+09 -> tube=7.204626e+09 (delta/quadratic part <= 4.297068e+07); quad/linear ratio <= 1.167958e+03
+[17:21:28 +    40.3s] RESULT written to cert_slice_Z72_outerbox_tube_K100_P732a11.json

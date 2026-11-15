@@ -1,0 +1,10 @@
+[0] sha256 of pinned input files
+    8 inputs checked
+[1] geometry cross-check (raw certs vs winding_certificate.json)
+    25 disks, geometry OK if no FAIL above
+[2] per-disk independent recomputation (tiling, coverage, domain, denominator, winding)
+    25 disks recomputed via manual-tuple/power-sum path in 309.4s
+[3] top-level aggregate cross-check
+    n_pass_required=23/23  n_checks=3250  worst_min_abs=2.3631e-03
+
+VERDICT: PASS -- winding_certificate.json internally consistent; 8 input files sha256-pinned; geometry cross-checked against raw certs; every disk's tiling/coverage/domain/denominator/winding independently recomputed via a separate (manual-complex-tuple, direct power-sum, cos-identity chord) code path; 23/23 required disks strictly wind=0.

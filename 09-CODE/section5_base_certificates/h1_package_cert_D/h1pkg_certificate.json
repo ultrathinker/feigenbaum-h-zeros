@@ -1,0 +1,428 @@
+{
+  "meta": {
+    "oid": "pkgCD2",
+    "title": "H1-PACKAGE ASSEMBLY CERTIFICATE (slice-Weierstrass route)",
+    "date": "2026-08-13T17:18:03.498219+00:00",
+    "brief": "article_v1/v3_work/h1_package/BRIEF_C_D.md item D",
+    "plan": "article_v1/v3_work/PLAN_H1_V2.md",
+    "review": "article_v1/v3_work/plan_review_ds/REVIEW_PLAN_DS.md",
+    "mode": "single process, read-only over archive; every number recomputed",
+    "distinct_from": "article_v1/v3_work/h1_proof/h1_certificate.py (orbital route A1+A2+A3)",
+    "extensions": [
+      "D2 (ADDENDUM_D2.md): added d_star_resolution -- second pair-of-computations (D_star M3=1834 vs 123479), conservative r_s in interval arithmetic, robustness field r_s_conservative_D_star; pinned compute_ld.json. See REPORT_CD.md section 7.",
+      "D3 (ADDENDUM_W.md): added lemma_W_resolution -- Lemma W is load-bearing (step-by-step Duhamel FAILS 3e-7 even with M3=1834, only the closed-form P_all passes); recomputed the three Lemma W inequalities, the C1 breaking point (2.4x headroom) and the nDT inherited-constant headroom (2.7x). See REPORT_CD.md section 8.",
+      "R (BRIEF_R.md / RECONCILE_R.md): reconciled the package with the independent verifier (verify_E) and ADDENDUM A0/A3. (R1) added tail_resolution: the three-term tail P_tail(m0)=P_all+||P_perp||*D_star+||h||*e_star/(1-1/delta); archive r_s=3.566e-7 marked INCOMPLETE (omits term3); e_star tight(M3=1834)=1.003e-7 primary / cons(M3=123479)=1.2128e-7 robustness; P_tail(m0)=4.57e-7/4.78e-7 < 5.44e-7; item C tight-radius now inapplicable. (R2) coverage corrected to 1465 working arcs (was '1542'); 77 NEG in 5 groups / 85 in 8 point-folders reconciled; NEG detection fixed (label-based, was 45). (R3) min x128_lower =1.1186e-3 on D_MINUS (was 5.6e-3 Z72). (R4) archive tube-K100 control=2425 (was 2426/2432)."
+    ]
+  },
+  "coverage": {
+    "n_tube_files_5groups": 1542,
+    "n_working_arcs_5groups": 1465,
+    "n_neg_controls_5groups": 77,
+    "group_counts_total_files": {
+      "point10_layer1_census_A": 416,
+      "point10_layer1_census_B": 357,
+      "point14_m8_base": 257,
+      "point17_z72_geometry": 384,
+      "point3B_localize_two_roots_agent_fix1": 128
+    },
+    "group_counts_expected": {
+      "point10_layer1_census_A": 416,
+      "point10_layer1_census_B": 357,
+      "point14_m8_base": 257,
+      "point17_z72_geometry": 384,
+      "point3B_localize_two_roots_agent_fix1": 128
+    },
+    "neg_criterion": "disk label (regex 'cert_slice_(.+?)_outerbox_tube_K100_') startswith 'NEG' (case-insensitive); covers NEG_A10/NEG_B1/NEG_B2/NEG_MID and 'NEGATIVE_u2' (point3B). The old '_NEG_' substring filter missed NEGATIVE_u2 and gave 45; correct is 77. (BRIEF_R R2.)",
+    "n_k100_archive_total": 2425,
+    "n_k100_pkg_output_excluded": 6,
+    "n_k100_total_incl_pkg_output": 2431,
+    "n_archive_note": "STRICT '*_tube_K100_*.json' anywhere under the archive, EXCLUDING the package's own output (cert_D/tight_arcs). Archive control=2425; package output excluded=6; total incl. package=2431. Verifier (verify_E) measured 2425 (matches). The old figure 2426 (REVIEW_PLAN_DS loose glob, pre item-C) and 2432 (loose 'cert_slice_*_K100*' incl. everything) are superseded.",
+    "neg_counts_reconciled": {
+      "neg_within_5_working_groups": 77,
+      "neg_within_8_point_folders": 85,
+      "neg_archive_wide_label_based": 85,
+      "neg_disk_labels": [
+        "NEGATIVE_u2",
+        "NEG_A10_A11",
+        "NEG_B1",
+        "NEG_B2",
+        "NEG_MID"
+      ]
+    },
+    "neg_85_vs_77_note": "77 = NEG tube arcs WITHIN the 5 working groups (the H1 scope). 85 = NEG tube arcs within the 8 point-folders under path_to_8 (REVIEW_PLAN_DS.md:52, 1811 files) = 77 + 8 from point6_sector_atlas_pilot, which is NOT among the 25 H1 disks. Both correct under their scopes; the coverage-relevant number is 77 (1465 working + 77 NEG = 1542)."
+  },
+  "denominator_positivity": {
+    "n_arcs_checked": 1465,
+    "scope": "WORKING arcs (1465); NEG controls excluded from the headline",
+    "all_x128_lower_positive": true,
+    "min_x128_lower": 0.0011186050146123545,
+    "min_x128_lower_disk": "D_MINUS",
+    "min_x128_lower_file": "cert_slice_D_MINUS_outerbox_tube_K100_P748a23.json",
+    "min_x128_lower_all_1542": 0.0011186050146123545,
+    "all_x128_positive_all_1542": true,
+    "note": "Recomputed min x128_lower over the 1465 WORKING arcs = 1.118605e-03 on disk D_MINUS (point3B, file cert_slice_D_MINUS_outerbox_tube_K100_P748a23.json). The figure 5.6e-3 (quoted in LEMMA_H1.md sec.3 and REVIEW_PLAN_DS.md:147) was the LOCAL Z72/NEG_B2 census figure, NOT the global min; corrected here. Positivity holds on all 1465 working arcs (and on all 1542 parsed)."
+  },
+  "negative_controls_separated": {
+    "neg_not_among_25_disks": true,
+    "worst_archive_Rmax": 0.8969493529258549,
+    "worst_archive_Rmax_file": "cert_slice_NEG_B2_outerbox_tube_K100_P78a2.json",
+    "worst_archive_is_NEG_B2_control": true,
+    "NEG_B2_SKIPPED_domain_ref": "point10_layer1_census_B/PROOF.md:77",
+    "worst_working_Rmax_conservative": 0.884996133213671,
+    "worst_working_Rmax_file": "cert_slice_Z72_outerbox_tube_K100_P732a6.json"
+  },
+  "worst_case_table_itemC": {
+    "worst_archive_Rmax": 0.8969493529258549,
+    "worst_archive_Rmax_disk": "NEG_B2",
+    "worst_archive_Rmax_is_NEG_control": true,
+    "worst_working_Rmax_conservative": 0.884996133213671,
+    "worst_working_Rmax_disk": "Z72",
+    "worst_working_Rmax_arc": 6,
+    "worst_working_Rmax_tight_itemC": 0.8828999861628851,
+    "tight_recompute_note": "Item C tightened R_S from 5.44e-7 to 3.566e-7 on the six Z72 arcs with Rmax>0.5. Rmax is insensitive to R_S (tube contribution is ~0.5%% of Rmax; dominated by the 0.1 contour radius and CL-34 errors). Worst working Rmax: 0.884996 -> 0.882900. Threshold 1.0 passed with margin 0.117. See TIGHT_ARCS.md.",
+    "tight_arcs": {
+      "6": {
+        "conservative": 0.884996133213671,
+        "tight": 0.8828999861628851,
+        "x128_lower": 0.006114987803636036,
+        "tube_json": "cert_slice_Z72_outerbox_tube_K100_P732a6.json"
+      },
+      "8": {
+        "conservative": 0.6402520439773116,
+        "tight": 0.6392464561659429,
+        "x128_lower": 0.006088322459264449,
+        "tube_json": "cert_slice_Z72_outerbox_tube_K100_P732a8.json"
+      },
+      "11": {
+        "conservative": 0.5082233538322567,
+        "tight": 0.5079905612969066,
+        "x128_lower": 0.006038671008798117,
+        "tube_json": "cert_slice_Z72_outerbox_tube_K100_P732a11.json"
+      },
+      "12": {
+        "conservative": 0.5365224978508042,
+        "tight": 0.5356536483751738,
+        "x128_lower": 0.006022070109672391,
+        "tube_json": "cert_slice_Z72_outerbox_tube_K100_P732a12.json"
+      },
+      "13": {
+        "conservative": 0.7143768149736405,
+        "tight": 0.7136531988478277,
+        "x128_lower": 0.0060065187071989545,
+        "tube_json": "cert_slice_Z72_outerbox_tube_K100_P732a13.json"
+      },
+      "14": {
+        "conservative": 0.5197376009868044,
+        "tight": 0.5194464420824656,
+        "x128_lower": 0.005992613251068697,
+        "tube_json": "cert_slice_Z72_outerbox_tube_K100_P732a14.json"
+      }
+    },
+    "scaling_note": "tube-excess (tube Rmax - outerbox_base Rmax) scales with R_S by ratio ~0.569 (sublinear: a*R_S + b*R_S^2 with b/a~0.61), NOT 0.6555; but the excess itself is 5e-4..5e-3, negligible vs the 0.88 base."
+  },
+  "m3_resolution": {
+    "level_tail_value_stored_P_all_upper": 2.113425114987063e-07,
+    "level_tail_pass_stored": true,
+    "duhamel_ds_value_P_star_refined": 6.686142051017625e-07,
+    "duhamel_ds_M3": 123479.0,
+    "duhamel_ds_pass": false,
+    "K_global_upper": 283.2754150512159,
+    "K_chosen": 284,
+    "K_chosen_is_ceil_of_global": true,
+    "M3_global_upper": 1833.6671469744538,
+    "M3_radius_ball": 0.0002,
+    "M3_chosen": 1834,
+    "M3_chosen_exceeds_global_upper": true,
+    "Amax_orbit_deviation": 0.00013479335033794542,
+    "Amax_lt_M3_radius": true,
+    "Amax_over_M3_radius": 0.6739667516897271,
+    "spectral_radius_upper_stored": 0.42736597939169413,
+    "spectral_radius_lt_1": true,
+    "closed_form_recomputed": {
+      "m3_certified": {
+        "M3": 1834,
+        "P_all_closed_form_upper": 2.113425114987063e-07,
+        "Qcoef_upper": 162.1318460814013,
+        "kernel_sum_upper": 2.8982115942664417,
+        "ratioP_upper": 0.016053982724942743,
+        "pass_le_3e-7": true
+      },
+      "m3_coarse_cauchy": {
+        "M3": 123479,
+        "P_all_closed_form_upper": 3.5541694178253944e-07,
+        "Qcoef_upper": 272.65884412546023,
+        "kernel_sum_upper": 2.8982115942664417,
+        "ratioP_upper": 0.016053982724942743,
+        "pass_le_3e-7": false
+      }
+    },
+    "explanation": "The archive holds TWO computations of ||P w_exit||_1. (i) level_tail_certificate bakes in M3=1834 (=ceil of M3_global_upper=1833.667 from m3_global_certificate.json, certified on the ball B(G,2e-4)) and gives the closed form P_all=2.113425e-7 <= 3e-7 (PASS), confirmed here by independent flint recomputation. (ii) duhamel_audit.py:56 instead uses M3=123479 = the coarse Cauchy/Lipschitz estimate K/(r0-r1)=284/0.0023, and its step-sum gives P_star_refined=6.686e-7 > 3e-7 (FAIL). The discrepancy is the M3 choice, not a contradiction: M3=1834 is the certified DIRECT third-derivative norm and is APPLICABLE because the actual orbit deviation Amax=1.34793e-4 (a purely geometric nesting quantity computed before any M3 enters, taken from the same duhamel_ds.json) is strictly inside the certification ball, Amax/2e-4=0.6740. The closed form with the coarse M3=123479 also fails (3.5542e-07), showing the M3 value is the determinant. Honesty note: Amax is read from the FAILing duhamel_ds.json, but Amax is independent of M3; only that file's cubic-remainder term (using M3=123479) fails. Re-certification of the inherited constants K, M3, spectral kernel on their existing balls is open item G of PLAN_H1_V2 -- see open_items."
+  },
+  "d_star_resolution": {
+    "D_star_tight_stored_level_tail": 5.171922832190344e-08,
+    "D_star_tight_k_level_tail": 8,
+    "D_star_tight_source": "w36/audit_codex/level_tail_certificate.json:25 (M3=1834)",
+    "D_star_conservative_stored_compute_ld": 6.252014868072774e-08,
+    "D_star_conservative_source": "w36/audit_codex/compute_ld.json:5 + compute_ld.log:67 (M3=123479)",
+    "same_quantity": true,
+    "same_quantity_evidence": "Both scripts compute sup_{k>=8} D_exit(k) over the same (D,e) DE recursion: level_tail_certificate.py:49 Phi(s)=q2*s^2 + M3*nh^3*s^3/6 with M3=1834 (:13); ld_audit.py:53 Phi_task(s)=s^2*q2 + s^3*(M3*nh^3/6) with M3=123479 (:38). The recursions level_tail_certificate.py:51-57 exit_de(k) and ld_audit.py:63-88 compute_exit(k,t) are algebraically identical (the double-step is combined in the former, split into two half-steps in the latter: delta^2*e + lKrh*(delta+L1)*D == delta*(delta*e+lKrh*D)+lKrh*L1*D). The SOLE substantive difference is the M3 value in the cubic term; q2 differs only in the 12th sig fig (111.550905120798913 vs 111.550905121, both upper bounds). Independent flint recomputation reproduces both stored D_star values to 12 sig figs -- see D_star_recomputed_flint.",
+    "D_star_recomputed_flint": {
+      "tight": {
+        "M3": 1834,
+        "D_star_upper": 5.171922832190344e-08,
+        "D_star_k": 8
+      },
+      "conservative": {
+        "M3": 123479,
+        "D_star_upper": 6.252014868063481e-08,
+        "D_star_k": 8
+      }
+    },
+    "radius_uses": "tight D_EXIT=5.171923e-8 (radius_K284_certificate.py:12, from level_tail M3=1834)",
+    "radius_sources_discrepancy": "radius_K284_certificate.py:28 lists 'compute_ld.log' among its sources, but compute_ld.log reports the CONSERVATIVE D_cp*=6.252015e-8 (M3=123479) while the value actually used (radius_K284_certificate.py:12 D_EXIT=5.171923e-8) is the TIGHT one from level_tail (M3=1834). Same pattern as the M3/P_all story: the tight value is used, the conservative file is cited.",
+    "r_s_conservative_D_star": {
+      "P_EXIT": 2.113426e-07,
+      "P_PERP": 2.808542,
+      "tube_radius": 5.44e-07,
+      "D_EXIT_tight_M3_1834": 5.171923e-08,
+      "D_EXIT_conservative_M3_123479": 6.252015e-08,
+      "r_s_tight_D_star_upper": 3.5659822966266e-07,
+      "r_s_conservative_D_star_upper": 3.869330671213e-07,
+      "headroom_tight_lower": 1.8740177033734e-07,
+      "headroom_conservative_lower": 1.570669328787e-07,
+      "headroom_drop_tight_minus_conservative": 3.033483745864e-08,
+      "pass_tight_D_star": true,
+      "pass_conservative_D_star": true
+    },
+    "robustness_conclusion": "Unlike the P-piece (where conservative M3=123479 FAILS P_all<=3e-7), the D-piece is ROBUST to the M3 choice: even with the conservative D_EXIT=6.252015e-8 the radius r_s=3.8693307e-07 stays strictly inside the tube (5.44e-7), headroom 1.5707e-07 (down from 1.8740e-07 tight). The package output r_s<tube_radius is therefore INDEPENDENT of which of the two D_star values is correct -- the reviewer question is closed before it is asked.",
+    "applicability_note": "The tight value D_EXIT=5.171923e-8 (M3=1834) is APPLICABLE for the same reason as the P-piece in m3_resolution: M3=1834 is the certified direct third-derivative norm on B(G,2e-4) (m3_global_certificate.json) and the orbit deviation Amax=1.3479e-04 (duhamel_ds.json:10) is strictly inside that ball (Amax/2e-4=0.6740). The conservative value 6.252015e-8 is reported here only as a robustness bound, NOT because the tight one fails -- it does not."
+  },
+  "lemma_W_resolution": {
+    "load_bearing": true,
+    "source": "ADDENDUM_W.md; formulas from level_tail_certificate.py:26-42 + duhamel_audit.py:80-168",
+    "lemma_W_inequalities": {
+      "first_single_coeff_upper": 261.08040592290513,
+      "first_single_coeff_bound_C0": 1000.0,
+      "first_single_coeff_pass": true,
+      "first_single_coeff_margin_pct": 73.89195940770949,
+      "intermediate_one_coeff_upper": 1279.2776472160413,
+      "intermediate_one_coeff_bound_C1": 1280.0,
+      "intermediate_one_coeff_pass": true,
+      "intermediate_one_coeff_margin_pct": 0.0564338112467679,
+      "pair_output_coeff_upper": 936.8199883568948,
+      "pair_output_coeff_bound_C0": 1000.0,
+      "pair_output_coeff_pass": true,
+      "pair_output_coeff_margin_pct": 6.318001164310518,
+      "lemma_W_pass": true,
+      "stored_level_tail_values": {
+        "first_single": "level_tail_certificate.json:6 = 261.0804...",
+        "intermediate": "level_tail_certificate.json:7 = 1279.2776...",
+        "pair_output": "level_tail_certificate.json:8 = 936.8200..."
+      }
+    },
+    "what_lemma_W_does": "Lemma W (level_tail_certificate.py:26-34) is the PAIR INVARIANT on w: at pair boundaries w_j <= C0*s_j^2 and at the intermediate single step w_j <= C1*s_j^2. It lets the package write Q_j <= QCOEF*s_j^2 (closed form, level_tail:38-39) instead of propagating w_j step-by-step and inflating it by K*a_j^2/2 each step. The difference between the closed-form and the step-by-step Duhamel sum is EXACTLY this invariant -- it is the load-bearing component.",
+    "p_piece_split": {
+      "step_by_step_M3_1834": {
+        "M3": 1834,
+        "P_star_step_by_step_upper": 3.9479535000604224e-07,
+        "P_star_k": 500,
+        "pass_3e-7": false
+      },
+      "step_by_step_M3_123479": {
+        "M3": 123479,
+        "P_star_step_by_step_upper": 6.686142051012574e-07,
+        "P_star_k": 500,
+        "pass_3e-7": false
+      },
+      "closed_form_M3_1834_upper": 2.113425114987063e-07,
+      "closed_form_M3_1834_pass_3e-7": true,
+      "closed_form_M3_123479_upper": 3.5541694178253944e-07,
+      "closed_form_M3_123479_pass_3e-7": false,
+      "conclusion": "Even with the CORRECT M3=1834 the step-by-step Duhamel recursion gives P*=3.948e-7 > 3e-7 (FAIL); only the closed-form level_tail (2.113e-7) passes. The gap is Lemma W. Without the pair invariant the package does not prove P_all<=3e-7, so Lemma W is load-bearing."
+    },
+    "c1_breaking_point": {
+      "breaking_C1_pass_below": 3049.990465082228,
+      "breaking_C1_fail_above": 3049.990465589799,
+      "one_coeff_required_floor": 1279.2776472160413,
+      "headroom_factor_vs_required": 2.3841505178485725,
+      "table": [
+        {
+          "C1": 1280,
+          "P_all_upper": 2.113425114987063e-07,
+          "pass_3e-7": true
+        },
+        {
+          "C1": 1500,
+          "P_all_upper": 2.2233373212598386e-07,
+          "pass_3e-7": true
+        },
+        {
+          "C1": 2000,
+          "P_all_upper": 2.473437758970031e-07,
+          "pass_3e-7": true
+        },
+        {
+          "C1": 3000,
+          "P_all_upper": 2.974888506921729e-07,
+          "pass_3e-7": true
+        },
+        {
+          "C1": 3050,
+          "P_all_upper": 3.000004789923499e-07,
+          "pass_3e-7": false
+        },
+        {
+          "C1": 3500,
+          "P_all_upper": 3.2262388183722574e-07,
+          "pass_3e-7": false
+        },
+        {
+          "C1": 5000,
+          "P_all_upper": 3.982789509876705e-07,
+          "pass_3e-7": false
+        }
+      ]
+    },
+    "nDT_headroom": {
+      "nDT_current": 22.19,
+      "nDT_at_which_one_coeff_hits_C1_break": 60.794095746745896,
+      "nDT_growth_factor_vs_current": 2.739706883584763,
+      "joint_constraint": "valid C1 exists iff one_coeff(nDT) <= C1_break, because P_all(C1) is monotone increasing and Lemma W requires C1 >= one_coeff(nDT). nDT may grow until one_coeff reaches the breaking C1."
+    },
+    "robustness_conclusion": "The tightest Lemma W inequality is one_coeff=1279.28 <= C1=1280, margin 0.056% -- visually the most fragile point of the package. But C1 is a ROUND constant chosen tight to 1279.28, not a threshold: it may grow to 3049.9905 (2.38x) before P_all crosses 3e-7, and the inherited nDT=22.19 may grow to 60.79 (2.74x) via the joint constraint one_coeff(nDT)<=C1_break. The dominant term of one_coeff is nDT*C0/delta^2 ~ 1018 of 1279, so the C1 headroom transfers almost fully to nDT. The package output P_all<=3e-7 does NOT depend on the 0.056% closeness."
+  },
+  "tail_resolution": {
+    "formula": "P_tail(m0) = P_all + ||P_perp||_1*D_star + ||h||_1*e_star/(1-1/delta)",
+    "delta": 4.66920160910299,
+    "inv_delta": 0.2141693770623265,
+    "denom_1_minus_inv_delta": 0.7858306229376735,
+    "nh_norm1": 6.33119360069264,
+    "term1_P_all": 2.113425114987063e-07,
+    "term2_P_perp_times_D_star": 1.4525562494965533e-07,
+    "D_star_tight_M3_1834": 5.171922832190344e-08,
+    "archive_r_s_upper": 3.565981364483616e-07,
+    "archive_r_s_source": "radius_K284_certificate.json:7 (r_s_upper=3.566e-7) = term1+term2 ONLY",
+    "archive_r_s_is_incomplete_accounting": true,
+    "incomplete_because": "archive r_s = P_EXIT + P_PERP*D_EXIT (radius_K284_certificate.py:14) omits the l-component (h-direction) drift tail ||h||_1*e_star/(1-1/delta) (term3). The WORKING quantity of the package is P_tail(m0) = r_s + term3.",
+    "tube_radius": 5.44e-07,
+    "headroom_to_r_s_lower": 1.8740186355163837e-07,
+    "variants": {
+      "tight_M3_1834_applicable": {
+        "e_star": 1.2452786942526502e-08,
+        "e_star_source": "level_tail_certificate.json:27 (M3=1834)",
+        "third_term_h_norm1_e_star_over_1_minus_inv_delta": 1.0032824211734208e-07,
+        "P_tail_m0_upper": 4.569263785657037e-07,
+        "headroom_to_tube_radius_lower": 8.70736214342963e-08,
+        "pass_lt_tube_radius": true
+      },
+      "conservative_M3_123479_robustness": {
+        "e_star": 1.505339728370349e-08,
+        "e_star_source": "compute_ld.json:3 (M3=123479)",
+        "third_term_h_norm1_e_star_over_1_minus_inv_delta": 1.2128055304715007e-07,
+        "P_tail_m0_upper": 4.778786894955117e-07,
+        "headroom_to_tube_radius_lower": 6.612131050448828e-08,
+        "pass_lt_tube_radius": true
+      }
+    },
+    "primary_variant": "tight_M3_1834_applicable",
+    "P_tail_m0_primary_upper": 4.569263785657037e-07,
+    "headroom_primary_lower": 8.70736214342963e-08,
+    "e_star_discrepancy_settled": "ADDENDUM_A0 used e_star=1.2453e-8 (level_tail:27, M3=1834, APPLICABLE) -> third term 1.003e-7 (written 1.01e-7) -> P_tail(m0)=4.57e-7. The orchestrator used e_star=1.5053e-8 (compute_ld:3, M3=123479, ROBUSTNESS bound) -> third term 1.2128e-7 -> P_tail(m0)=4.78e-7. Both arithmetics are correct for their e_star; the APPLICABLE/primary value is the tight one (it matches the M3=1834 already used for D_star in r_s and everywhere else in the package). ADDENDUM_A0 is RIGHT on the primary; the orchestrator's 1.2128e-7 is a valid conservative upper bound. BOTH pass < tube_radius 5.44e-7.",
+    "item_C_now_inapplicable": true,
+    "item_C_note": "Item C (tight R_S recompute at 3.566e-7) is INAPPLICABLE: the required tube radius is P_tail(m0)~4.57e-7 (tight) > 3.566e-7, so the tight radius cannot be used. Working tube radius remains 5.44e-7 (conservative archive certificates). The tight recompute is preserved as a historical/negative result; Rmax is insensitive to R_S, so the Rmax numbers remain valid. See TIGHT_ARCS.md header."
+  },
+  "assembly_chain": {
+    "a1_working_radius_about_G": 0.0025,
+    "a1_pass": true,
+    "a1_negative_control_at_0.01_pass": true,
+    "a1_note": "0.0025 is a WORKING radius where K (k_global) and M3 (m3_global) are certified, not the analyticity boundary: the 0.01 negative control still passes, failure occurs only between 0.01 and 0.05. T is Frechet-holomorphic on an open nbhd of B(G,0.0025); the tower stays within 6.26e-4 of G for all u in the closed disks.",
+    "tube_radius_conservative_5.44e-7": 5.44e-07,
+    "r_s_actual_exit_upper": 3.5659822966266e-07,
+    "r_s_note": "r_s=3.566e-7 is the INCOMPLETE archive accounting (radius_K284: P_EXIT + P_PERP*D_EXIT) -- it omits the e_star tail term ||h||*e_star/(1-1/delta). The WORKING tail quantity is P_tail(m0); see tail_resolution.",
+    "r_s_lt_tube_radius": true,
+    "headroom_lower_to_r_s": 1.8740177033734e-07,
+    "headroom_lower_to_r_s_note": "1.874e-7 is the headroom to the INCOMPLETE r_s, hence OVERSTATED. The real headroom to P_tail(m0) is ~0.87e-7 (tight) / ~0.66e-7 (conservative); see tail_resolution.",
+    "P_all_levels_upper": 2.113425114987063e-07,
+    "P_all_le_target_3e-7": true,
+    "spectral_radius_lt_1": true,
+    "chain": [
+      "u -> f_{s_k(u)} affine => holomorphic",
+      "T Frechet-holomorphic on B(G,0.0025) (A1); tower within 6.26e-4 of G",
+      "slice_k(u) := T^{k-m0} f_{s_k(u)} holomorphic in u on closed disk (max principle covers interior)",
+      "slice increments bounded in l1 by P_all=2.113e-7 uniformly in |u|<=11.57 (level_tail)",
+      "Weierstrass (Banach-valued) => limit slice holomorphic in u",
+      "F_m0 holomorphic on tube radius 5.44e-7; actual slice deviation inside P_tail(m0)=4.57e-7 (tight; r_s=3.566e-7 is the incomplete archive bound); |w|<1 domain gate holds on all 1465 working arcs (max Rmax<1)",
+      "H = F_m0(limit slice) holomorphic as composition => H1"
+    ]
+  },
+  "lemma_anchor": {
+    "LEMMA_H1_path": "article_v1/v3_work/h1_package/lemma_A/LEMMA_H1.md",
+    "IDENTITY_B_path": "article_v1/v3_work/h1_package/lemma_A/IDENTITY_B.md",
+    "LEMMA_H1_present": true,
+    "IDENTITY_B_present": true,
+    "lemma_anchored": true,
+    "formulation_anchor": {
+      "lemma_a0": "> **Лемма (а0).** Для каждого диска `D̄` последовательность\n> `{slice_k(u)}_{k≥m₀}` является равномерно по `u ∈ D̄` последовательностью\n> Коши в `ℓ¹`. Именно, для `j > k ≥ m₀`:\n>\n>     sup_{u∈D̄} ‖slice_j(u) − slice_k(u)‖₁  ≤  P_tail(k),\n>\n> где `P_tail(k) → 0` геометрически при `k → ∞`. Несущая скорость —\n> `√q = √0.427 = 0.654` за уровень (DE-матрица, `level_tail_certificate.json:23`);\n> более быстрые компоненты — Дюамель `ratioP = 0.016` и неустойчивая\n> `1/δ = 0.214`. Все три `< 1`. При этом полный хвост из трёх слагаемых",
+      "lemma_a1": "> **Лемма (а1).** Если доменная проверка `|w_n| < 1` сертифицирована на\n> контуре `Γ = ∂D̄` для всех `n = 0,…,2^{m₀+1}−1` и для всех возмущений\n> трубки `v ∈ B_s(r_s)` (шар радиуса `r_s = 5.44e-7`), то `|w_n(u)| < 1` на\n> всей внутренности `D̄` для тех же `n` и `v`.",
+      "lemma_R2": "> **Лемма (R2).** Функционал базы `F_{m₀}(x) = (T^{m₀}x)(1) = H_{m₀}(x)`\n> фреше-голоморфен на трубке `B_s(r_s) ∩ {l = 0}` (множестве входов `x`, чья\n> орбита остаётся в `|w| < 1`, а `x_{2^{m₀}}` отделено от нуля).",
+      "theorem_H1": "> **Теорема (H1).** Предельная `H(u) = lim_{k→∞} H_k(u)` голоморфна в\n> окрестности каждого из 25 замкнутых дисков `D̄`.",
+      "identity_star": "H_k(u) = H_{m₀}(T^{k−m₀} f_{s_k(u)}) = F_{m₀}(slice_k(u)).   (∗)"
+    },
+    "LEMMA_H1_full_text": "# ЛЕММА H1: голоморфность предельной H (срезовый Вейерштрасс)\n\n**Исполнитель:** kilo (glm-5.2), oid pkgA1. **Дата:** 13.08.2026.\nТекст годен для вставки в `article_v1/ARTICLE_v1.md` §3. Все числа — со\nссылками `файл:строка`. Строгое (Arb 512) помечено явно; точечная арифметика\nпомечена NOT RIGOROUS. Архив READ-ONLY; всё писано в `h1_package/lemma_A/`.\n\n---\n\n## 0. Постановка и обозначения\n\nПусть `A = ℓ¹(ℕ₀, ℂ)` с нормой `‖f‖₁ = Σ|fₙ|` и свёрточным умножением. `G`\n— сертифицированная неподвижная точка оператора ренормализации Фейгенбаума\n(`cl34_certificate.json`: `‖G−g₀‖₁ ≤ 4.67e-61`). Оператор `T` определён\nформулой `T(f) = f(v(f))/a`, `a = f(0)`, `u(f) = (a²−1)/R + a²w`,\n`v(f) = (f(u(f))²−1)/R`, `R = 5/2`, `w = (X−1)/R`\n(`A1_ANALYTICITY_PROOF.md:42-59`; свёрка нормировки — `IDENTITY_B.md` §B*).\n\nДля `m₀ = 7` и параметра `u` положим `s_k(u) = u·AU₀/δ^k`, `AU₀ =\n0.414037999086273` (`x4_common.py:AU0`), `δ = 4.66920160910299`\n(`w33_gh_hiprec.json:delta_rayleigh`). Орбита: `x₀ = 0`,\n`x_{n+1}(u) = g(w_n) + s_k(u)·h(w_n)`, `w_n = (x_n²−1)/2.5`. Функция уровня:\n`H_k(u) = x_{2^{k+1}}(u)/x_{2^k}(u)`.\n\n**H1 (цель):** предельная `H(u) = lim_{k→∞} H_k(u)` голоморфна в окрестности\nкаждого из 25 замкнутых дисков `D̄`.\n\nКлючевой объект — **срез**: `slice_k(u) := T^{k−m₀} f_{s_k(u)}`, где\n`f_s = G + s·h`, и **функционал базы**: `F_{m₀}(x) := (T^{m₀}x)(1)`.\n\n**Тождество ренормализации** (доказательство с явным членом ошибки —\n`IDENTITY_B.md`):\n\n    (Tf)^n(0) = f^{2n}(0)/a,   x_{2n}(f) = a·x_n(Tf),\n    H_k(u) = H_{m₀}(T^{k−m₀} f_{s_k(u)}) = F_{m₀}(slice_k(u)).   (∗)\n\nЧлен ошибки тождества: `|s_{m₀}|·|h(−0.4)| ≤ 9.9e-5·1.63e-29 = 1.6e-33` —\nничтожен (см. `IDENTITY_B.md` §B).\n\n---\n\n## 1. Лемма (а0) — срезы образуют равномерно сходящуюся последовательность Коши\n\n> **Лемма (а0).** Для каждого диска `D̄` последовательность\n> `{slice_k(u)}_{k≥m₀}` является равномерно по `u ∈ D̄` последовательностью\n> Коши в `ℓ¹`. Именно, для `j > k ≥ m₀`:\n>\n>     sup_{u∈D̄} ‖slice_j(u) − slice_k(u)‖₁  ≤  P_tail(k),\n>\n> где `P_tail(k) → 0` геометрически при `k → ∞`. Несущая скорость —\n> `√q = √0.427 = 0.654` за уровень (DE-матрица, `level_tail_certificate.json:23`);\n> более быстрые компоненты — Дюамель `ratioP = 0.016` и неустойчивая\n> `1/δ = 0.214`. Все три `< 1`. При этом полный хвост из трёх слагаемых\n> `P_tail(m₀) = P_all + ‖P_perp‖₁·D_star + ‖h‖₁·e_star/(1−1/δ) ≈ 4.57·10⁻⁷`\n> (при `e_star = 1.245·10⁻⁸` из `level_tail_certificate.json:27`, M3=1834;\n> консервативная оценка с M3=123479 даёт `4.78·10⁻⁷`) `< tube_radius = 5.44·10⁻⁷`.\n> Архивный `r_s = 3.566·10⁻⁷` (`radius_K284_certificate.py:14`) — **неполный\n> учёт**: он равен лишь первым двум слагаемым и опускает l-компонентный хвост\n> `‖h‖₁·e_star/(1−1/δ)`; рабочей величиной пакета является `P_tail(m₀)`.\n>\n> Следовательно ряд `Σ_{k≥m₀}(slice_{k+1} − slice_k)` сходится абсолютно и\n> равномерно, и `slice_k → slice_∞` в `C(D̄, ℓ¹)`.\n\n*(Третий проверяющий (`REVIEW_PLAN_DS.md:58-86`) справедливо указал, что\nсходимость срезов нигде не была выведена, а подавалась как готовое число. Ниже\n— вывод. Несущее утверждение — свойство Коши, а не точное равенство суммы\nприращений `P_all` (см. замечание в конце доказательства).)*\n\n**Доказательство.** Шаг 1 (разложение Дюамеля). По лемме W\n(`level_tail_certificate.py:26-34`, проверено: коэффициенты `261 ≤ 1000`,\n`1279 ≤ 1280`, `937 ≤ 1000`, `pass=true`), поперечное отклонение `w` на\nгранице пары удовлетворяет `w ≤ C₀·s²`, `C₀ = 1000`, а на промежуточном шаге\n`w ≤ C₁·s²`, `C₁ = 1280`. Отсюда (`:36`) `Q_j ≤ QCOEF·s_j²` равномерно по\nвсем уровням-источникам `k`.\n\nШаг 2 (структура вкладов). Дюамелева сумма для отклонения среза `slice_k` от\nренормализационной прямой `G + s_{m₀}(u)·h` есть сумма послойных вкладов\n(`duhamel_ds/w36_duhamel.md:114`):\n\n    P w_exit(k) = Σ_{i=0}^{n−1} DT(G)^{n−1−i} P_perp Q_i,   n = k−m₀.\n\nВклад уровня `j = m₀+1+r` (где `r = j−m₀−1` — «обратное расстояние»),\nраспространённый до базы, ограничен по норме величиной\n\n    ‖вклад_j‖₁ ≤ QCOEF · s_j² · ‖DT(G)^r P_perp‖₁.\n\nПри `r = 0`: `‖P_perp‖₁ = pperp = 2.808542` (`level_tail_certificate.py:19`,\n`proj_codex`). При `r ≥ 1`: `‖DT(G)^r P_perp‖₁ ≤ Cs·μ^r`, `Cs =\n5.495835`, `μ = 0.35` (`:19`, `proj_codex`). Поскольку `s_j² = (t/δ^j)²` и\n`s_{m₀+1} = s₈ = t/δ⁸`, имеем `s_j² = s₈²·δ^{−2r}`. Поэтому\n\n    ‖вклад_j‖₁ ≤ QCOEF · s₈² · Cs · μ^r · δ^{−2r}\n               = QCOEF · s₈² · Cs · (μ/δ²)^r\n               = QCOEF · s₈² · Cs · ratioP^r,\n\nгде `ratioP = μ/δ² = 0.016054` (`level_tail_certificate.py:40`,\n`level_tail_certificate.json:13`). Для `r = 0` аналогично `‖вклад_{m₀+1}‖₁\n≤ QCOEF·s₈²·pperp`.\n\nШаг 3 (ключевое: оценки вкладов не зависят от источника `k`). Граница\n`‖вклад_j‖₁ ≤ QCOEF·s₈²·ratioP^r` зависит только от `j` (через `s_j =\nu·AU₀/δ^j`) и `u` — но **не** от глубины источника `k`, поскольку `Q_j ≤\nQCOEF·s_j²` есть равномерная по `k` оценка (лемма W, шаг 1). Добавление более\nглубокого уровня добавляет к накопленному отклонению **один новый член** с\nубывающей границей.\n\nШаг 4 (хвост → 0). h-компонента `slice_k` равна `s_{m₀}(u)·h` для всех `k`\n(усиление `δ^{k−m₀}` в h-направлении в точности гасится убыванием `s_k =\nu·AU₀/δ^k`, см. `IDENTITY_B.md` §B). Поэтому разность `slice_j − slice_k`\n(j > k) лежит в поперечной части и мажорируется хвостом Дюамелевой суммы\n(вклады от уровней `k+1, …, j`):\n\n    ‖slice_j − slice_k‖₁  ≤  Σ_{ℓ=k+1}^{j} ‖вклад_ℓ‖₁\n                         ≤  QCOEF·s₈² · Cs · Σ_{r=k−m₀}^{∞} ratioP^r\n                         =  QCOEF·s₈² · Cs · ratioP^{k−m₀} / (1 − ratioP)\n                         =:  P_tail(k)  →  0  при k → ∞,\n\nпоскольку `ratioP = 0.016 < 1`. В частности `P_tail(m₀) ≤ QCOEF·s₈²·kernel_sum\n= P_all`. Для `k = m₀` это даёт суммарное накопленное отклонение от прямой.\n\nШаг 5 (сходимость). `P_tail(k) → 0` геометрически ⇒ `{slice_k}` равномерно по\n`u ∈ D̄` последовательность Коши ⇒ `slice_k → slice_∞` в `C(D̄, ℓ¹)`. Ряд\n`Σ_{k≥m₀}(slice_{k+1} − slice_k)` сходится абсолютно и равномерно, т.к. его\nхвост мажорируется `P_tail(k)`. Равномерность по `u` следует из того, что все\nоценки зависят от `u` только через `t = |u|·AU₀ ≤ 4.7911` (см. §4 ниже). ∎\n\n**Шаг 4 в нелинейном случае — уравнение в вариациях** (вывод вместо\nзаявления; треугольник даёт лишь `2·P_all`, что к нулю не стремится).\n\nРазложим `slice_ℓ = G + s_{m₀}(u)·h + p_ℓ`, `p_ℓ ∈ {l=0}` (поперечная\nпоправка; h-компонента `s_{m₀}(u)·h` постоянна по `ℓ` и сокращается в\nприращении). Возмущение уровня `ℓ+1` есть `s_{ℓ+1} = s_ℓ/δ`, поэтому\nпоправка `q_ℓ` (порождаемая при `ℓ−m₀` шагах ренормализации) удовлетворяет\n`‖q_ℓ‖₁ ≤ ‖p_ℓ‖₁/δ²` (лемма W, `Q_j ≤ QCOEF·s_j²`, возмущение в `δ` раз\nменьше). Поскольку `DT(G)` сохраняет `{l=0}` (`l∘DT(G) = δ·l` ⇒\n`l(DT(G)p)=0` для `p∈ker l`, `proj_codex`), рекурренция\n\n    p_{ℓ+1} = DT(G)[q_ℓ] + R_ℓ ,   ‖R_ℓ‖₁ ≤ K·s_{m₀}² ,\n\nдаёт `‖p_{ℓ+1}‖₁ ≤ (Cs·μ/δ²)·‖p_ℓ‖₁ + K·s_{m₀}² = 0.0882·‖p_ℓ‖₁ + K·10⁻⁸`.\nПо принципу сжимающих отображений `p_ℓ → p_∞` геометрически, и приращения\nубывают со скоростью `0.0882` (норма) или `ratioP = 0.016` (спектр). Нелинейный\nостаток `R_ℓ` порождает h-направленный снос (l-компонента `e`), убывающий со\nскоростью `1/δ = 0.214` (DE-матрица, `p = 1/δ²`). DE-матрица даёт\nконсервативную скорость `√q = 0.654`. Все три `< 1`. (Подробности —\n`ADDENDUM_A0.md`.)\n\n**Замечание о расхождении `duhamel_ds.log`.** В той же папке лежит\n`duhamel_ds.log`, дающий `‖P w_exit‖₁ = 3.44–6.69·10⁻⁷` (FAIL vs `3e-7`).\nПричина: `duhamel_audit.py:56` использует `M3 = 123479` (консервативная\nоценка Коши `K/(r₀−r₁) = 284/0.0023`), тогда как `level_tail_certificate.py:13`\nиспользует `M3 = 1834` — сертифицированное прямое значение\n`m3_global_certificate.json` (`M3_global_upper = 1833.67`, радиус `2e-4`,\nорбита в `B(G, Amax)`, `Amax ≤ 1.34e-4 < 2e-4`, `pass=true`). Значение\n`1834` корректно применимо, поскольку фактическое отклонение орбиты `Amax ≤\n1.34e-4` строго меньше радиуса сертификации `2e-4`. Число `P_all = 2.11e-7`\nотвечает именно `M3 = 1834`; `duhamel_ds.log` — устаревшая консервативная\nверсия, требующая отсылки, а не игнорирования\n(см. `REVIEW_PLAN_DS.md:88-112`).\n\n---\n\n## 2. Лемма (а1) — принцип максимума для трубочного случая\n\n> **Лемма (а1).** Если доменная проверка `|w_n| < 1` сертифицирована на\n> контуре `Γ = ∂D̄` для всех `n = 0,…,2^{m₀+1}−1` и для всех возмущений\n> трубки `v ∈ B_s(r_s)` (шар радиуса `r_s = 5.44e-7`), то `|w_n(u)| < 1` на\n> всей внутренности `D̄` для тех же `n` и `v`.\n\n**Доказательство.** Зафиксируем возмущение `v`. Функция `u ↦ w_n(u, v) =\n((x_n(u,v))²−1)/2.5` голоморфна по `u` на внутренности `D̄` для каждого `n`:\nиндукция по `n`, `x₀ = 0`, `x_{n+1} = g(w_n) + s·h(w_n)` — композиция\nголоморфных отображений (многочлены `g, h` степени 99 голоморфны всюду;\n`PROOF_H1.md:98-111`, дыра №2). По принципу максимума для голоморфной\nфункции:\n\n    max_{D̄} |w_n(·, v)| = max_Γ |w_n(·, v)|.\n\nДоменная проверка сертифицирует `max_Γ |w_n(·, v)| < 1` (через аффинные\nформы по дугам контура, `cert_slice_param_audit.py:353-355`, жёсткая проверка\n`if not (rz < 1): raise`). Следовательно `max_{D̄} |w_n(·, v)| < 1`. Поскольку\nэто верно для каждого `v` из трубки, равномерно по `v`, внутренность покрыта.\n\n**Почему трубочный случай не ломает голоморфность по `u`.** Зависимость от\nвозмущения `v` идёт через коэффициенты карты `g + v_0, h + v_1` (где\n`(v_0, v_1)` — разложение `v` по `g`- и `h`-направлениям). Для каждого\nфиксированного `v` функция `u ↦ x_n(u, v)` — одна голоморфная функция от `u`\n(аффинная зависимость `s_k(u) = u·AU₀/δ^k` линейна по `u`). Трубка нужна\nтолько для **оболочки** — для сертификации верхней оценки `|w_n|` сразу по\nвсем `v`, — а не для голоморфности по `u`. ∎\n\n---\n\n## 3. Лемма (R2) — домен ⇒ голоморфность F_{m₀} на трубке\n\n> **Лемма (R2).** Функционал базы `F_{m₀}(x) = (T^{m₀}x)(1) = H_{m₀}(x)`\n> фреше-голоморфен на трубке `B_s(r_s) ∩ {l = 0}` (множестве входов `x`, чья\n> орбита остаётся в `|w| < 1`, а `x_{2^{m₀}}` отделено от нуля).\n\n**Доказательство** (индукция по шагам орбиты; `PROOF_H1.md` звено A1, дыра №2;\n`REVIEW_PLAN_DS.md:137-153`).\n\nОрбита входа `x`: `y₀ = 0`, `y_{n+1} = g(w_n) + s·h(w_n)` (где `s` —\nпараметр карты `x`), `w_n = (y_n²−1)/2.5`. Тогда `F_{m₀}(x) = y_{2^{m₀+1}}/\ny_{2^{m₀}}`.\n\n*База.* `y₀ = 0` не зависит от `x`. `y₁ = g(w₀) + s·h(w₀)`, `w₀ = −0.4` —\nполином от `x` (через `s` и коэффициенты `x`), голоморфно.\n\n*Шаг.* Если `y_n` голоморфна по `x` и `|w_n| < 1`, то `w_{n+1} = (y_{n+1}²−1)\n/2.5` голоморфна, и `y_{n+2} = g(w_{n+1}) + s·h(w_{n+1})` — композиция\nголоморфных (многочлены `g, h`; оценка композиции `f(q)` при `‖q‖₁ < 1` —\n`A1_ANALYTICITY_PROOF.md:64-89`). Условие `|w_n| < 1` обеспечено леммой (а1)\nдля всех `x` трубки.\n\n*Деление.* `F_{m₀}(x) = y_{256}/y_{128}`. Знаменатель `y_{128} = x_{2^{m₀}}`\nотделён от нуля: сертифицированная нижняя граница `x128_lower > 0` на всех\nпроверяемых дугах всех 25 дисков (скан 1465 рабочих дуг 5 групп; всего файлов\n1542, из них 77 NEG-контролей), худший запас `x128_lower ≈ 1.12·10⁻³` у диска\nD_MINUS группы point3B (`cert_slice_D_MINUS_outerbox_tube_K100_P748a23.json`;\nранее ошибочно указывалось `5.6·10⁻³` у Z72 — то была локальная величина\ncensus/`NEG_B2`, не глобальный минимум; `REVIEW_PLAN_DS.md:147`),\n`cert_slice_param_audit.py:430-432` — жёсткая проверка `if not (den_lo > 0):\nraise`). Значит `1/y_{128}` голоморфна, и `F_{m₀}` — голоморфна. ∎\n\n---\n\n## 4. Три обязательных абзаца\n\n### (I) Равномерность по u\n\nВсе операторные оценки зависят от `u` только через скаляр `t = |u|·AU₀`\n(`level_tail_certificate.py:12`, `t = 4.7911`; `duhamel_audit.py:66-68`,\n`tmax = AU₀·(u_D + R_ARC) = 0.4140·11.5715 = 4.7911`). Отсюда `|u| ≤ t/AU₀\n= 11.571`. Поскольку `|u|` — выпуклая функция (норма), её максимум на\nзамкнутом диске достигается на границе: `max_{D̄}|u| = |u_c| + ρ = max_Γ|u|`\n(неравенство треугольника). Худший из 25 дисков — Z74, `|u_c| + ρ ≈ 9.99 <\n11.571` (`interior_probe.log`, `REVIEW_PLAN_DS.md:125`). Поэтому оценка\n`P_all` (и все производные) равномерна по всему диску, а не только по контуру;\nвнутренность покрыта автоматически.\n\n### (II) Неверный потолок 4.907\n\nОценка `|H_k(u)| ≤ ‖G‖₁ + 6.27e-4 ≈ 4.907` из `PLAN_V2_KILO.md` пункт 1б\n**неверна**, и третье проверяющее справедливо её отметило\n(`REVIEW_PLAN_DS.md:194`). Причина: подмена башни. Оценка `‖T^{k−m₀} f_{s_k}\n− G‖₁ ≤ 6.27e-4` верна для **частичной** башни `T^{k−m₀}` (от уровня `k` к\nбазе `m₀`, цепочка вверх). Но `H_k(u) = (T^k f_{s_k})(1)` (`IDENTITY_B.md`\n(∗)) — **полная** башня `T^k` до нулевого уровня. h-компонента полной башни\nусиливается до `s_k·δ^k = u·AU₀`, давая `‖T^k f_{s_k} − G‖₁` порядка\n`|u|·AU₀·‖h‖₁ = 4.7911·6.3312 ≈ 30` (на худшем диске; мой пересчёт) —\nрадикально больше `6.27e-4`. Приложение A статьи даёт сертифицированные\nнижние границы `|H_{m₀}|` на Γ: `21.98` (Z73), `21.50` (Z05), `17.72` (Z71),\n`9.28` (Z72) — все `≫ 4.907`, что подтверждает ошибку. Правильная оценка\nограниченности (для Витали—Портер, см. ниже): `|H_k(u)| ≤ √2/x128_lower\n≈ 1180` (из ограниченности орбиты `|w_n| < 0.40` и отделённости знаменателя) —\nконечна, но груба. **Срезовый Вейерштрасс этой оценки не требует** (ему нужна\nтолько лемма (а0), а не ограниченность `|H_k|`).\n\n### (III) Запасной маршрут (Витали—Портер)\n\nЕсли срезовый Вейерштрасс по какой-то причине не пройдёт (например, если\nлемма (а0) не удастся провести в нелинейном случае), доступен откат на\nВитали—Портер: (i) ограниченность `{H_k}` на `D̄` — `|H_k(u)| ≤ √2/x128_lower\n≈ 1180` (конечна, из орбитальной оценки + отделённости знаменателя, §II);\n(ii) поточечная сходимость — из сходимости срезов (лемма (а0), последовательность\nКоши) и непрерывности `F_{m₀}` (лемма R2). Витали—Портер даёт локально\nравномерную сходимость и голоморфность предела. Верхняя граница `|H_k|` на Γ\nв настоящее время машиной не выдаётся (трубочные JSON содержат только\n`H7_abs_lower`); её добавление — одна строка в `result` ядра\n(`cert_slice_param_audit.py:474-486`, поле `H_abs_upper = ub(af_abs_upper(H))`),\nно это отдельная работа, не готовый факт. **В данном тексте этот маршрут не\nиспользуется** — срезовый Вейерштрасс проходит и сильнее (даёт равномерную, а\nне только локально равномерную сходимость).\n\n---\n\n## 5. Основная теорема\n\n> **Теорема (H1).** Предельная `H(u) = lim_{k→∞} H_k(u)` голоморфна в\n> окрестности каждого из 25 замкнутых дисков `D̄`.\n\n**Доказательство.**\n\n**(i) Голоморфность срезов по u.** `u ↦ f_{s_k(u)} = G + s_k(u)·h` аффинна\n(линейна по `u`). `T` фреше-голоморфна на `B(G, 0.0025)`\n(`A1_ANALYTICITY_PROOF.md`, A1 CLOSED: три барьера `‖u‖₁ ≤ 0.499 < 1`,\n`‖v‖₁ ≤ 0.709 < 1`, `|a| ≥ 0.397 > 0`, `a1_certificate.json`,\nотрицательные контроли `0.01 PASS`, `0.05–0.40 FAIL`). Цепочка\n`T^j f_{s_k(u)}` для `j = 0,…,k−m₀` остаётся в `B(G, 6.27e-4) ⊂ B(G,\n0.0025)`: h-компонента усиливается до `s_{m₀}(u)·‖h‖₁ ≤\n4.7911/δ⁷·6.3312 = 6.27e-4` (`VERDICT_MAXPRINCIPLE.md` §(а), мой пересчёт\n`6.269e-4`; `REVIEW_PLAN_DS.md:45`), поперечная `≤ r_s = 3.566e-7`\n(`radius_K284_certificate.json:7`, `pass=true`). Композиция голоморфных ⇒\n`slice_k(u) = T^{k−m₀} f_{s_k(u)}` голоморфна по `u` на `D̄`.\n\n**(ii) Сходимость срезов (лемма (а0)).** `{slice_k}` — равномерно по\n`u ∈ D̄` последовательность Коши с геометрическим хвостом `P_tail(k) → 0`.\nНесущая скорость `√q = 0.654 < 1` (DE-матрица); `P_tail(m₀) ≤ 4.57·10⁻⁷`\n(при M3=1834; консервативно `4.78·10⁻⁷` при M3=123479) `< tube_radius =\n5.44e-7` (лемма (а0), §1; вывод нелинейного шага 4 — уравнение в вариациях,\n§1, `ADDENDUM_A0.md`). Архивный `r_s = 3.566e-7` — **неполный учёт** (без\nтретьего слагаемого `‖h‖₁·e_star/(1−1/δ)`); рабочая величина — `P_tail(m₀)`\n(`tail_resolution` сертификата; пересчитано в `BRIEF_R`, см. `RECONCILE_R.md`).\nПо теореме Вейерштрасса для `ℓ¹`-значных голоморфных функций: `slice_k →\nslice_∞` равномерно на `D̄`, и `slice_∞ : D̄ → ℓ¹` голоморфна по `u`.\n\n**(iii) Голоморфность F_{m₀} (лемма R2).** `F_{m₀}` фреше-голоморфна на\nтрубке `B_s(r_s)` (лемма R2, §3). Срезы и их предел лежат в трубке:\n`‖slice_k(u) − (G + s_{m₀}(u)·h)‖₁ ≤ P_tail(m₀) ≈ 4.57·10⁻⁷ ≤ tube_radius =\n5.44e-7` (`radius_K284_certificate.json:7-9` даёт неполный `r_s = 3.566·10⁻⁷`\n— без третьего слагаемого; полный хвост `P_tail(m₀)` пересчитан в `BRIEF_R`,\nзапас до `tube_radius ≈ 0.87·10⁻⁷`).\n\n**(iv) Композиция.** `H(u) = lim_k H_k(u) = lim_k F_{m₀}(slice_k(u)) =\nF_{m₀}(slice_∞(u))` (непрерывность `F_{m₀}` на трубке). Композиция\nголоморфных `u ↦ slice_∞(u)` и `F_{m₀}` голоморфна. ∎\n\n---\n\n## 6. Опорные сертификаты\n\n| файл | sha256[:16] | роль |\n|---|---|---|\n| `path_to_8/point1_A1/A1_ANALYTICITY_PROOF.md` | `a49b7eb1…` | T фреше-голоморфна на `B(G,0.0025)` |\n| `w36/audit_codex/cert_slice_param_audit.py` | `950ba8a0…` | доменная проверка `rz<1` (`:354`); x128_lower>0 (`:431`) |\n| `w36/audit_codex/level_tail_certificate.py`/`.json` | `1c2bf9d1…`/`de550233…` | лемма W, Duhamel P_all=2.113e-7 (`:42`/`:15`), DE матрица 0.427 (`:47`/`:23`) |\n| `w36/audit_codex/radius_K284_certificate.py`/`.json` | `bdbe8360…`/`f4394769…` | r_s=3.566e-7 ≤ 5.44e-7 (`:14,16`/`:7-9`) |\n| `w36/audit_codex/m3_global_certificate.json` | — | M3=1834 (радиус 2e-4, pass); разрешение расхождения с duhamel_ds |\n| `w36/audit_codex/k_global_certificate.json` | — | K=284 на `B(G,0.0025)` |\n| 1542 `cert_slice_*_outerbox_tube_K100_*.json` (5 групп: 1465 рабочих + 77 NEG) | — | домен с трубкой: все Rmax<1 (худший рабочий 0.885, Z72); x128_lower>0 (мин 1.12e-3, D_MINUS) |\n| `w36/duhamel_ds/w36_duhamel.md` | — | структура Дюамелевой суммы (вклад от уровня j) |\n\nУнаследованные константы `K=284, M3=1834, q2, nDT, nDT2, Cs, μ, pperp`\nпрослежены до `w36/proj_codex` (спектральное ядро `‖DT(G)^j P_perp‖ ≤\nCs·μ^j`), `w36/close_proof` (парная рекурсия), `m3_global_certificate.json`\n(M3) и `k_global_certificate.json` (K). Пере-сертификация этих входов —\nотдельная задача G плана (`PLAN_H1_V2.md`).\n\n---\n\n## 7. Что НЕ доказано в этом тексте (явно)\n\n1. **Тождество (∗) с членом ошибки** — вынесено в `IDENTITY_B.md` (пункты B, B*).\n2. **Пере-сертификация унаследованных констант** (K, M3, ядро) — задача G;\n   здесь они прослежены, не пересчитаны. Пакет `conditional on G`.\n3. **Покрытие именно 25 дисков** — 1465 рабочих дуг в 5 группах (из 1542\n   трубочных файлов: census_A 416, census_B 357, point14 257, point17 384,\n   point3B 128; 77 NEG-контролей — `NEG_A10`/`NEG_B1`/`NEG_B2`/`NEG_MID` и\n   `NEGATIVE_u2`); ещё 269 JSON в 3 доп. папках (point2/6/11) — не все из 25\n   дисков. Ша256-пины и явный список дуг — задача D.\n4. **NEG_B2** (`Rmax = 0.897`) — контрольный диск, в 25 не входит\n   (`census_B/PROOF.md:77`, `SKIPPED (домен)`); в таблице худших случаев\n   пакета должен стоять Z72 (`Rmax = 0.885`).\n",
+    "formulation_source_sha256": "e8d6776b4c6fc58ae3a26d0c67111faa5aa9ceba7db3584ac40d827b70829338",
+    "IDENTITY_B_full_text": "# ТОЖДЕСТВО РЕНОРМАЛИЗАЦИИ: алгебра + член ошибки + сверка нормировки\n\n**Исполнитель:** kilo (glm-5.2), oid pkgA1. **Дата:** 13.08.2026.\nПункты B и B* брифа `BRIEF_A.md`. Архив READ-ONLY.\n\n---\n\n## B. Алгебра тождества `H_m(f) = H_{m−1}(Tf)` с явным членом ошибки\n\n### B.1. Нормировка и определение оператора\n\nПоложим `a := f(0)` (нулевой коэффициент Тейлора; в X-координате проекта\n`a = f(0) = F(1)`, `A1_ANALYTICITY_PROOF.md:43`). Оператор ренормализации\n(`A1_ANALYTICITY_PROOF.md:46`):\n\n    T(F)(X) = F(F(F(1)²·X)²) / F(1) = F(F(a²·X)²) / a.\n\nВ w-координате (`w = (X−1)/R`, `R = 5/2`) это принимает вид\n(`A1_ANALYTICITY_PROOF.md:52-58`):\n\n    u(f) = (a² − 1)/R + a²·w,   b(f) = f(u(f)),\n    v(f) = (b(f)² − 1)/R,       T(f) = f(v(f)) / a.\n\n### B.2. Индукция: `(Tf)^n(0) = f^{2n}(0) / a`\n\n**(Та же индукция, что в `PLAN_REVIEW_REQUEST.md:64-69`, перепроверена.)**\n\n**База, n = 1.** Орбита карты `Φ_f`: `x₀ = 0`, `x₁ = f(w₀)`,\n`w₀ = (x₀² − 1)/R = −1/R`. В X-координате: `x₀ = 0` соответствует\n`X₀ = 0`, и `(Tf)(X₀) = (Tf)(0)`.\n\nИз формулы оператора при `X = 0`: `T(F)(0) = F(F(a²·0)²)/a = F(F(0)²)/a`.\nЕсли `f(0) = 1` (нормировка), то `F(0)² = 1`, и `T(F)(0) = F(1)/a = a/a = 1`.\n\nС другой стороны, `f²(0) = f(f(w₀)) = f(x₁)`. При нормировке `f(0) = 1`:\n`x₁ = f(w₀) = f(−0.4)`, и `f²(0)/a = x₁/a`. Равенство `(Tf)(0) = f²(0)/a`\nтребует `1 = x₁/a`, т.е. `x₁ = a`. **Это выполнено приближённо**, а не точно —\nсм. член ошибки в §B.4.\n\n**Шаг индукции.** Предположим `(Tf)^n(0) = f^{2n}(0)/a`. Тогда\n\n    (Tf)^{n+1}(0) = (Tf)((Tf)^n(0)) = (Tf)(f^{2n}(0)/a).\n\nПодставляя в формулу `T(f)(X) = f(f(a²X)²)/a` при `X = f^{2n}(0)/a`:\n\n    T(f)(f^{2n}(0)/a) = f(f(a²·f^{2n}(0)/a)²)/a = f(f(a·f^{2n}(0))²)/a.\n\nДля завершения нужно `f(a·f^{2n}(0))² = f^{2n+1}(0)`. Это — свойство\n**самоподобия орбиты** ренормализации: на критическом множестве Фейгенбаума\nдвойная итерация `f(f(·))` через масштаб `a` воспроизводит сдвиг орбиты на 2\nшага. Точное выполнение этого свойства для сертифицированной неподвижной\nточки `G` установлено CL-34 (`‖G − g₀‖₁ ≤ 4.67e-61`); для возмущённых карт\n`f_s` — с ошибкой порядка `|s|²` (см. §B.4).\n\nОтсюда `(Tf)^{n+1}(0) = f^{2n+2}(0)/a`. ∎ (шаг)\n\n### B.3. Следствие: `H_m(f) = (T^m f)(1)`\n\nИз `(Tf)^n(0) = f^{2n}(0)/a` при `n = 2^{m−1}`: `(Tf)^{2^{m−1}}(0) =\nf^{2^m}(0)/a`, т.е. `x_{2^m}(Tf) = x_{2^{m+1}}(f)/a`. Аналогично\n`x_{2^{m−1}}(Tf) = x_{2^m}(f)/a`. В отношении множитель `a` сокращается:\n\n    H_m(f) = x_{2^{m+1}}(f) / x_{2^m}(f) = x_{2^m}(Tf) / x_{2^{m−1}}(Tf)\n           = H_{m−1}(Tf).\n\nИтерируя: `H_m(f) = H_0(T^m f)`. База: `H_0(f) = x_2(f)/x_1(f)`. При\nнормировке `f(0) = 1`: `x_1 = f(−0.4) = a`, `x_2 = f(f(−0.4)) = f(a)`, и\n`H_0(f) = f(a)/a = f(1)/1 = (T^0 f)(1) = f(1)`. Проверено численно:\n`H_0 ≈ f(1) = g(0) + s·h(0) = −0.3995 + s·h₀` (NOT RIGOROUS, точечная\nарифметика). Итого:\n\n    H_k(u) = F_{m₀}(T^{k−m₀} f_{s_k(u)}),   F_{m₀}(x) := (T^{m₀} x)(1).   (∗)\n\n### B.4. Член ошибки нормировки (явно)\n\nНормировка `f(0) = 1` выполнена **не точно** для проектных карт\n`f_s = G + s·h`. Именно:\n\n    f_s(0) = g(−0.4) + s·h(−0.4),   w₀ = (0² − 1)/2.5 = −0.4.\n\n- `g(−0.4) = 1` с точностью `2.01·10⁻⁸⁹` (100-модовое усечение,\n  `interior_probe`-пересчёт; для истинного `G` — с точностью CL-34 хвоста\n  `≤ 4.67·10⁻⁶¹`, `cl34_certificate.json`).\n- `h(−0.4)`: мой пересчёт по `w33_gh_hiprec.json` (100 модов, Arb 300 бит) даёт\n  `h₀(−0.4) = 9.96·10⁻³²`; CL-34 мажорирует истинное `|h(−0.4)| ≤ ‖h−h₀‖₁ +\n  |h₀(−0.4)| ≤ 1.63·10⁻²⁹ + 9.96·10⁻³² ≈ 1.63·10⁻²⁹`\n  (`cl34_certificate.json`: `‖h−h₀‖₁ ≤ 1.63·10⁻²⁹`).\n\nПоэтому `f_s(0) = 1 + s·h(−0.4) + O(4.67·10⁻⁶¹)`, и член ошибки в тождестве\n(∗) на уровне `k` есть `ε_k ∼ |s_k|·|h(−0.4)|`.\n\n**Усиление после `T^{k−m₀}`.** Применение `T` усиливает h-компоненту в `δ`\nраз за шаг (собственное значение `DT(G)[h] = δ·h`). После `k − m₀` шагов:\n`|s_k|·δ^{k−m₀} = |u|·AU₀/δ^k · δ^{k−m₀} = |u|·AU₀/δ^{m₀} = |s_{m₀}|`.\nУсиленный член ошибки:\n\n    |ε| ≤ |s_{m₀}| · |h(−0.4)| ≤ (4.7911/δ⁷) · 1.63·10⁻²⁹\n        = 9.90·10⁻⁵ · 1.63·10⁻²⁹ = 1.6·10⁻³³.\n\n**Член ошибки не растёт с уровнем `k`** (усиление `δ^{k−m₀}` в точности\nгасится убыванием `s_k = u·AU₀/δ^k`). Величина `1.6·10⁻³³` ничтожна по\nсравнению со всеми другими масштабами доказательства (`r_s = 3.566·10⁻⁷`,\n`P_all = 2.11·10⁻⁷`, `6.27·10⁻⁴`). Тождество (∗) следует записывать как\n\n    H_k(u) = F_{m₀}(T^{k−m₀} f_{s_k(u)}) + O(1.6·10⁻³³),\n\nгде `O(1.6·10⁻³³)` — равномерно по `k` и `u` (мажорируется CL-34 хвостом\nданных `h`, а не ошибкой метода).\n\n---\n\n## B*. Сверка нормировки: код `T` ↔ алгебра\n\n**Вопрос брифа:** использует ли оператор `T` в коде ту же нормировку\n`a := f(0)`, что и алгебра выше?\n\n**Ответ: да, согласовано.** Конкретно:\n\n1. **Определение оператора в сертификате A1**\n   (`A1_ANALYTICITY_PROOF.md:43,46,52-58`):\n   `a = f₀ = f(0) = F(1)` — нулевой коэффициент Тейлора (значение в `w = 0`,\n   оно же значение в `X = 1`). Оператор `T(f) = f(v(f))/a` с `v(f) =\n   (b(f)²−1)/R`, `b(f) = f(u(f))`, `u(f) = (a²−1)/R + a²w`. **Это та же\n   нормировка `a := f(0)`, что в алгебре §B.1.** ✓\n\n2. **Код трубки** (`cert_slice_param_audit.py`) **не вычисляет `T` явно**.\n   Вместо этого орбита распространяется напрямую (стр. 350-406):\n   `x₀ = 0`, `x_{n+1} = g(w_n) + s·h(w_n)`, `w_n = (x_n²−1)/2.5`, и\n   `H_{m₀} = x_{256}/x_{128}`. Это есть вычисление `H_{m₀}(f_{s_{m₀}})` для\n   конкретной карты — т.е. прямой счёт отношения орбиты, а не применение\n   оператора `T`. Нормировка в этом прямом счёте **не фигурирует** (отношение\n   инвариантно относительно перемасштабирования `f ↦ f/a`). ✓\n\n3. **Где нормировка нужна.** Оператор `T` (с нормировкой `a = f(0)`)\n   появляется только в тождестве (∗), связывающем глубокие уровни с базой.\n   Поскольку множитель `a` сокращается в отношении `H_m = H_{m−1}(Tf)`\n   (§B.3), тождество инвариантно относительно выбора нормировки.\n   Следовательно, расхождение «алгебра предполагает `f(0) = 1`» vs «код\n   использует `f_s(0) = g₀ + s·h₀ ≈ −0.4`» **не влияет** на (∗): обе\n   нормировки дают одно и то же отношение. ✓\n\n4. **Числовой контроль.** `g(0) = −0.39953528` (`x4_common.py:tc_g[0]`,\n   `ARTICLE_v1.md:13`), т.е. `a = f_s(0) = −0.3995 + s·h₀`. При `s = 0`\n   (неподвижная точка) `a = g₀ = −0.3995 ≠ 1`. Но `H_0(G) = G(G(−0.4))/G(−0.4)\n   = G(1)/1 = G(0) = −0.3995 = a` (NOT RIGOROUS, проверка по данным). Для\n   возмущённой карты `H_0(f_s) = f_s(f_s(−0.4))/f_s(−0.4)`, и отношение не\n   зависит от нормировки. ✓\n\n**Вывод B*.** Согласованность нормировки подтверждена: код считает отношение\nорбиты (инвариантное к нормировке), оператор `T` в сертификате A1 использует\n`a = f(0)` (та же нормировка, что в алгебре), и тождество (∗) инвариантно\nотносительно перемасштабирования. Расхождения нет.\n\n---\n\n## Ссылки\n\n- `A1_ANALYTICITY_PROOF.md:42-59` — формула оператора `T` в координатах проекта.\n- `cert_slice_param_audit.py:350-406` — прямое распространение орбиты, `H_{m₀}\n  = x_{256}/x_{128}`.\n- `cl34_certificate.json` — `‖G−g₀‖₁ ≤ 4.67e-61`, `‖h−h₀‖₁ ≤ 1.63e-29`.\n- `w33/t5_cert_sonnet/w33_gh_hiprec.json` — данные `g, h` (100 модов);\n  `h(−0.4) = 9.96e-32` (мой пересчёт, Arb 300).\n- `PLAN_REVIEW_REQUEST.md:64-72` — индукция `(Tf)^n(0) = f^{2n}(0)/a`\n  (оркестратор); перепроверена здесь с явным членом ошибки.\n- `OPUS_AUDIT.md:98-112` — численная проверка тождества (невязка `1e-31…1e-27`\n  = уровень точности данных `h`, не ошибка тождества).\n",
+    "IDENTITY_B_source_sha256": "38658a350ee178770940a77a3b870add81fb29b77a7fc7b5641c982e66d18f3b",
+    "note": "lemma_anchored=True requires BOTH LEMMA_H1.md and IDENTITY_B.md present (both are mandatory pins per BRIEF D.1: the lemma formulation AND the identity (*) with its error term). While IDENTITY_B.md is pending the certificate is otherwise complete; the formulation_anchor blocks above are the EXACT statements pinned from LEMMA_H1.md, not a paraphrase."
+  },
+  "open_items": {
+    "G_recert_of_inherited_constants_PENDING": true,
+    "G_description": "Re-certification of the inherited level_tail inputs K=284, M3=1834 and the spectral kernel (0.427) on their EXISTING balls (not an expanded 0.01 ball) is open item G of PLAN_H1_V2. Until G is done the package is 'provisional on re-cert of inherited constants'; all_pass=True here means the ASSEMBLY CONDITIONS as currently certified are met, NOT that the article is finished.",
+    "H_maj_jortail_rebuild_PENDING": true,
+    "H_description": "The current B_tail majorant is 3-4 orders too coarse (gives |H-H7| ~ 1..50 vs actual ~3e-3..8e-3). Rebuild is open item H; the slice-Weierstrass route does not depend on it, but a tighter B_tail would raise the Rouche margin.",
+    "C_tight_recompute_done": true,
+    "C_finding": "Tightening R_S did not help Rmax (insensitive); worst working Rmax 0.884996 -> 0.882900, threshold 1.0 still passed (margin 0.117). Not a blocker."
+  },
+  "proof_status": {
+    "assembly_conditions_certified": true,
+    "H1_assembly_provisional": true,
+    "caveat": "assembly_conditions_certified checks the PACKAGE inputs; H1_assembly_provisional becomes True when the lemma formulation is anchored AND the assembly conditions hold AND the open-item-G caveat is acknowledged. It is NOT the article-ready flag."
+  },
+  "checks_recomputed": {
+    "coverage_5groups_total_files_1542": true,
+    "coverage_working_arcs_1465": true,
+    "coverage_neg_controls_77": true,
+    "denominator_positive_on_1465_working": true,
+    "worst_working_Rmax_below_1": true,
+    "P_all_le_3e-7": true,
+    "spectral_radius_below_1": true,
+    "r_s_lt_tube_radius": true,
+    "r_s_robust_to_D_star_choice": true,
+    "lemma_W_passes_three_inequalities": true,
+    "lemma_W_load_bearing_robust": true,
+    "a1_pass": true,
+    "M3_applicable_Amax_lt_radius": true,
+    "M3_chosen_exceeds_global_upper": true,
+    "K_chosen_exceeds_global_upper": true,
+    "all_inputs_pinned": true,
+    "lemma_anchored": true,
+    "group_counts_match": true
+  },
+  "sha256_inputs": {
+    "w36/audit_codex/level_tail_certificate.py": "1c2bf9d17ce14e5c041f504ff3cb60a1fab831d7ff8577a8fc9cd5aef08869c7",
+    "w36/audit_codex/level_tail_certificate.json": "de55023344ecc8cc9172dde2a19af3b026c0c1e354b0a417068a3bfcaf83d257",
+    "w36/audit_codex/m3_global_certificate.json": "ede2cd8ba896da7a79a9c4d1dccccf72e58c5d8a701d06b01a9da8fde7cdb3ce",
+    "w36/audit_codex/k_global_certificate.json": "5306e9f8f649e6d73a28745546a51ef13517f11561138879548e82ae7b63b0fe",
+    "w36/audit_codex/radius_K284_certificate.json": "f43947691493ebb60ee03e06fb7deb0a34a71df252352c9c94ef04f91b9d727d",
+    "w36/audit_codex/compute_ld.json": "26aa207fb4d9e56434c0d12f651b09ee8bcd9585f80d5d513c548228460e3b42",
+    "w36/audit_codex/cert_slice_param_audit.py": "950ba8a078ca6ecac1b5aab242d4347bcd6d0784e1c48b2c498344055f4c4694",
+    "path_to_8/point1_A1/a1_certificate.json": "94c7657ac6ab03d48b9292c22e2a1168396c88efe0bad70726e4ea2172907138",
+    "w33/t5_cert_sonnet/w33_gh_hiprec.json": "7d4acc22f96a5ec473afa5b88ba4669e622aef8546c448a471068e5ff29284d8",
+    "w36/tail_codex/cl34_certificate.json": "07568db34c11e046bb679144c293a66328f8ad9d64b39d35a944406981c124c6",
+    "article_v1/v3_work/h1_package/lemma_A/LEMMA_H1.md": "e8d6776b4c6fc58ae3a26d0c67111faa5aa9ceba7db3584ac40d827b70829338",
+    "article_v1/v3_work/h1_package/lemma_A/IDENTITY_B.md": "38658a350ee178770940a77a3b870add81fb29b77a7fc7b5641c982e66d18f3b"
+  },
+  "sha256_missing": [],
+  "all_pass": true,
+  "all_pass_scope": "'assembly conditions as currently certified are met' -- NOT 'article ready'; see open_items.G and proof_status.caveat.",
+  "n_checks": 3037
+}
